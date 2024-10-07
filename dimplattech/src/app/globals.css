@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@layer base{
+  body{
+    @apply bg-[#f4f4f4]
+  }
+}
+
+@layer components {
+  .input-el::placeholder {
+    @apply text-sm text-[#4d4d4d];
+  }
+}
+
+
+/* .swiper{
+  width: 80% !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+.swiper-wrapper{
+  width:  80% !important
+}
+
+.swiper-slide {
+  width: 100% !important;
+} */

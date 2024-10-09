@@ -6,7 +6,7 @@ import image3 from "../assests/why-image-3.png"
 
 export default function Services(){
     return (
-        <section className="px-[5%] mt-10">
+        <section className="px-[5%] my-20">
             <p className="text-center text-base text-[#777A79] mb-4">Why Dimplattech?</p>
             <p className="text-2xl font-semibold mb-4 text-center text-[#4d4d4d]">We are Customer Centric </p>
             <p className="text-center text-base text-[#777A79] mb-2">

@@ -25,12 +25,16 @@ export default function Header() {
             <li className='h-[22px] cursor-pointer hover:border-b-2 hover:border-[#219dd0] text-[#777A79] text-sm whitespace-nowrap'>Our Team</li>
         </ul>
         <div className='flex sm:gap-[5px] md:gap-[15px] lg:gap-[25px] items-center'>
-            <button className='w-[98px] h-[36px] flex justify-center items-center text-white text-sm bg-[#219dd0] rounded-lg hover:bg-white hover:text-[#219dd0] hover:border-2 hover:border-[#219dd0] transition-all duration-500 ease-linear'>
-                Register
-            </button>
+            <a href='/signup'>
+              <button className='w-[98px] h-[36px] flex justify-center items-center text-white text-sm bg-[#219dd0] rounded-lg hover:bg-white hover:text-[#219dd0] hover:border-2 hover:border-[#219dd0] transition-all duration-500 ease-linear'>
+               Register
+              </button>
+            </a>
+            <a href='/login'>
             <button className='w-[98px] h-[36px] flex justify-center items-center text-white text-sm hover:border hover:border-white rounded-lg  transition-all duration-500 ease-linear'>
                 Log in
             </button>
+            </a>
         </div>
       </nav>
       {
@@ -44,7 +48,7 @@ export default function Header() {
             className='block cursor-pointer sm:hidden text-white text-2xl'
             />
       }
-      <nav className={`px-[5%] ${isMenuOpen ?  "block sm:hidden" : "hidden"} absolute left-0 top-full bg-[#0F1022] w-full`}>
+      <nav className={`px-[5%] ${isMenuOpen ?  "block sm:hidden" : "hidden"} absolute z-10 left-0 top-full bg-[#0F1022] w-full`}>
         <ul className='text-[#777A79]'>
             <li className='py-2 text-center cursor-pointer text-sm border-b border-b-[#219dd0]'>Home</li>
             <li className='py-2 text-center cursor-pointer text-sm border-b border-b-[#219dd0]'>About Us</li>
@@ -52,8 +56,12 @@ export default function Header() {
             <li className='py-2 text-center cursor-pointer text-sm border-b border-b-[#219dd0]'>Our Team</li>
         </ul>
         <div className='text-white mt-8 flex flex-col'>
-            <button className='py-2 cursor-pointer bg-[#219dd0] rounded-lg'>Register</button>
-            <button className='py-2 cursor-pointer'>Log in</button>
+            <a href='/signup'>
+              <button className='w-full py-2 cursor-pointer bg-[#219dd0] rounded-lg'>Register</button>
+            </a>
+            <a href="/login">
+              <button className='w-full py-2 cursor-pointer'>Log in</button>
+            </a>
         </div>
       </nav>
     </header>

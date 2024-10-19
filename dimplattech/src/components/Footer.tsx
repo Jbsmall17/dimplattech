@@ -4,10 +4,10 @@ import { FaInstagram,FaFacebookF,FaXTwitter,FaPinterestP,FaLinkedinIn } from "re
 
 export default function Footer() {
   return (
-    <footer className='bg-[#7a7a7a] pt-10 pb-6'>
-      <div className='flex flex-row mb-4 px-[5%]'>
-        <div className='flex-1 self-end'>
-            <p className='text-sm text-[#cfcfcf] mb-2'>Follow Us:</p>
+    <footer className='bg-[#7a7a7a] pt-6 sm:pt-8 lg:pt-10 pb-2 sm:pb-4 lg:pb-6'>
+      <div className='flex flex-col sm:flex-row gap-4 mb-4 px-[5%]'>
+        <div className='flex-1 self-center sm:self-end'>
+            <p className='text-sm text-center sm:text-start text-[#cfcfcf] mb-2'>Follow Us:</p>
             <div className='flex flex-row gap-2'>
                 <div className='flex flex-row w-[24px] h-[24px] rounded-sm justify-center items-center bg-white'>
                     <FaInstagram />
@@ -23,17 +23,17 @@ export default function Footer() {
                 </div>
             </div>
         </div>
-        <div className='flex-1 self-start'>
-            <ul className='grid grid-cols-3 text-[#cfcfcf] text-sm pb-10'>
-                <li>Home</li>
-                <li>About Us</li>
-                <li>Help &amp; Support</li>
-                <li>Courses</li>
-                <li>Contact us</li>
-                <li>Privacy policy</li>
-                <li>Pricing</li>
-                <li>Our Team</li>
-                <li>Sitemap</li>
+        <div className='flex-1 self-center sm:self-start'>
+            <ul className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-1 sm:gap-0 text-[#cfcfcf] text-sm sm:pb-10'>
+                <li className='text-center sm:text-start'>Home</li>
+                <li className='text-center sm:text-start'>About Us</li>
+                <li className='text-center sm:text-start'>Help &amp; Support</li>
+                <li className='text-center sm:text-start'>Courses</li>
+                <li className='text-center sm:text-start'>Contact us</li>
+                <li className='text-center sm:text-start'>Privacy policy</li>
+                <li className='text-center sm:text-start'>Pricing</li>
+                <li className='text-center sm:text-start'>Our Team</li>
+                <li className='text-center sm:text-start'>Sitemap</li>
             </ul>
         </div>
       </div>

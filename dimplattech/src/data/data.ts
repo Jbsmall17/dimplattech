@@ -37,8 +37,7 @@ export const productDesign : TopicsObj[] = [
             "Working with images",
             "Working with icons",
             "Working with color",
-            "Working with",
-            "components"
+            "Working with components"
         ]
     },
     {

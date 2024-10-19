@@ -38,3 +38,9 @@
 .otp-input{
   width: 50px !important
 }
+
+.glassmorphism{
+  background: rgba(142, 142, 146, 0.5);
+  backdrop-filter: blur(10px); /* Blur effect */
+  -webkit-backdrop-filter: blur(10px); /* For Safari */
+}

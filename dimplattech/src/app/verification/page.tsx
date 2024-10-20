@@ -3,7 +3,6 @@ import React, { useState } from 'react'
 import verificationImg from "../../assests/verification-image.png"
 import Image from 'next/image'
 import OtpInput from 'react-otp-input'
-import { productDesign } from "../../data/data"
 
 export default function page() {
     const [otp, setOtp] = useState('');

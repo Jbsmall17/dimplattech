@@ -12,7 +12,7 @@ export default function page() {
             </div>
             <div className='flex-[3] py-4 lg:py-6 px-4 sm:px-6 lg:px-10'>
                 <h2 className='text-xl font-semibold text-black mb-1'>Welcome Back!</h2>
-                <p className='text-base text-black mb-4'>Let's continue from where we stopped</p>
+                <p className='text-base text-black mb-4'>Let&apos;s continue from where we stopped</p>
                 <div className='flex flex-col gap-2 mb-4'>
                     <label className='text-base font-semibold'>Phone Number/Email</label>
                     <input

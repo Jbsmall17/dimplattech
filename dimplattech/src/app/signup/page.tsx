@@ -11,7 +11,7 @@ export default function page() {
                 <Image  className='h-full rounded-tl-lg rounded-bl-lg' src={dimplatWallpaper} alt="dimplat wallpaper" />
             </div>
             <div className='flex-[3] py-4 px-4 sm:px-6 lg:px-10'>
-                <h2 className='text-xl font-semibold text-black mb-1'>One last step, let's get to know you</h2>
+                <h2 className='text-xl font-semibold text-black mb-1'>One last step, let&apos;s get to know you</h2>
                 <p className='text-base text-black mb-3'>Create an account with us</p>
                 <div className='grid grid-cols-2 gap-4'>
                     <div className='flex flex-col gap-2'>

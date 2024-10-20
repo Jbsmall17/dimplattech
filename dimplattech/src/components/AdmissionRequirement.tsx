@@ -13,13 +13,13 @@ export default function AdmissionRequirement() {
         <li>
             <p className='text-lg sm:text-xl'>Educational Background:</p>
             <ul className='list-disc'>
-                <li className='text-sm sm:text-base'>You don't need to have a certificate to apply for this diploma program. We expect anyone to take the program</li>
+                <li className='text-sm sm:text-base'>You don&apos;t need to have a certificate to apply for this diploma program. We expect anyone to take the program</li>
             </ul>
         </li>
         <li>
             <p className='text-lg sm:text-xl'>Work Experience and Certifications:</p>
             <ul className='list-disc'>
-                <li className='text-sm sm:text-base'>You don't need to have work experience to learn this traxk</li>
+                <li className='text-sm sm:text-base'>You don&apos;t need to have work experience to learn this traxk</li>
             </ul>
         </li>
         <li>

@@ -13,7 +13,7 @@ interface headerObjProps{
 
 export default function Header({page}:headerObjProps) {
   const [isMenuOpen,setIsMenuOpen] = useState(false)
-  const [activePage,setActivePage] = useState(page)
+  const [activePage,] = useState(page)
   const router = useRouter()
 
   const handleNavigation = (route : string) =>{

@@ -3,7 +3,6 @@
 import Image, { StaticImageData } from 'next/image'
 import React, { MouseEvent, useState } from 'react'
 import { FaWhatsapp } from "react-icons/fa6"
-import { FaCalendarAlt } from "react-icons/fa"
 import durationSvg from "../assests/duration.svg"
 import certificateSvg from "../assests/certificate.svg"
 import instructorSvg from "../assests/instructor.svg"

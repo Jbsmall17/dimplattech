@@ -1,6 +1,6 @@
 "use client"
 import Image, { StaticImageData } from 'next/image'
-import React, { ReactNode } from 'react'
+import React from 'react'
 import { useRouter } from 'next/navigation'
 
 interface courseProp{

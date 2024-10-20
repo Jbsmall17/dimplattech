@@ -10,11 +10,11 @@ import cad from "../assests/autocad.png"
 import fullstack from "../assests/fullstack.png"
 import marketing from "../assests/marketing.png"
 import projectManagement from "../assests/projectManangement.png"
-import productManagement from "../assests/productManagement.png"
+// import productManagement from "../assests/productManagement.png"
 import cyberSecurity from "../assests/cyberSecurity.png"
 import cloudComputing from "../assests/cloudComputing.png"
 import graphics from "../assests/graphicDesign.png"
-import realEstate from "../assests/realEstate.png" 
+// import realEstate from "../assests/realEstate.png" 
 
 
 
@@ -110,12 +110,6 @@ export default function Courses() {
                   desc={"Learn how to create visual content to communicate messages. By applying visual hierarchy and page layout techniques."}
                   courseRoute='/courses/graphics-design'
                 />
-                {/* <Course 
-                  image={realEstate}
-                  name={"Real Estate Development"}
-                  desc={"At the end of this training course, you will learn: Understanding of real estate development and investment processes."}
-                  courseRoute='/courses/real-estate'
-                /> */}
               </>
             }
         </div>

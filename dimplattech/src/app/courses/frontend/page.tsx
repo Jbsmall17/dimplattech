@@ -21,7 +21,7 @@ export default function page() {
         <CourseHero
             image={frontendBgImg}
             name={<>FRONT END DEVELOPMENT</>}
-            desc={<>Let's help you become a professional frontend web developer. You'll learn all<br /> you need to know to become a Frontend Developer and build interesting<br /> portfolios while learning the fundamentals of HTML, CSS, JavaScript and React</>}
+            desc={<>Let&apos;s help you become a professional frontend web developer. You&apos;ll learn all<br /> you need to know to become a Frontend Developer and build interesting<br /> portfolios while learning the fundamentals of HTML, CSS, JavaScript and React</>}
             month={"3"}
         />
         <section>

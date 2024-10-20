@@ -1,14 +1,14 @@
-import CourseHero from '@/components/CourseHero'
-import Header from '@/components/Header'
-import React from 'react'
-import dataAnalysisImg from "../../../assests/dataAnalysis.png"
-import dataAnalCareer from "../../../assests/data-anal-career.png"
-import Subscribe from '@/components/Subscribe'
 import Footer from '@/components/Footer'
-import starIcon from "../../../assests/star-icon.svg"
+import Header from '@/components/Header'
+import Subscribe from '@/components/Subscribe'
+import React from 'react'
+import cyberCareer from "../../../assests/cybersecurity-career.png"
 import Image from 'next/image'
+import starIcon from "../../../assests/star-icon.svg"
+import { cyberSecurity } from '@/data/data'
+import cloudImg from "../../../assests/cloudComputing.png"
+import CourseHero from '@/components/CourseHero'
 import AdmissionRequirement from '@/components/AdmissionRequirement'
-import { dataAnalysis } from '@/data/data'
 import CourseFee from '@/components/CourseFee'
 import CareerOutcome from '@/components/CareerOutcome'
 
@@ -20,9 +20,9 @@ export default function page() {
             page={"course"}
         />
         <CourseHero
-            image={dataAnalysisImg}
-            name={<>DATA ANALYSIS</>}
-            desc={<>learn the latest analytics tools and techniques, how to work with SQL, the languages<br /> of R and Python, the art of creating data visualizations, and how to apply statistics and<br /> predictive analytics in a business environment.I</>}
+            image={cloudImg}
+            name={<>CLOUD COMPUTING</>}
+            desc={<>Learn the basics of cloud computing, including infrastructure,<br /> services, and deployment models.</>}
             month={"6"}
         />
         <section>
@@ -32,10 +32,10 @@ export default function page() {
                     <div className='absolute z-[-1] left-0 bottom-2 h-[24px] sm:h-[32px] w-[24px] sm:w-[32px] rounded-full bg-[#219dd0]'></div>
                     <h2 className='text-xl sm:text-2xl font-semibold text-black'>COURSE OUTLINE</h2>
                 </div>
-                <p className='text-lg sm:text-xl font-semibold mb-2 sm:mb-4'>In this immersive 6-month Data analysis course, you will achieve the following learning outcomes</p>
+                <p className='text-lg sm:text-xl font-semibold mb-2 sm:mb-4'>In this immersive 6-month Cloud computing course, you will achieve the following learning outcomes</p>
                 <div>
                     {
-                        dataAnalysis.map(({title,description},idx)=>{
+                        cyberSecurity.map(({title,description},idx)=>{
                             return (
                                 <div key={idx} className='flex flex-row gap-4 mb-3'>
                                     <div className='w-[20px] shrink-0'>
@@ -51,7 +51,7 @@ export default function page() {
                                             }
                                         </ul>
                                     </div>
-                             </div>
+                                </div>
                             )
                         })
                     }
@@ -67,13 +67,13 @@ export default function page() {
                     general: "#300,000"
                 }}
             />
-            <CareerOutcome
-                image={dataAnalCareer}
-                topic='Prepare to become a Data analyst'
+            <CareerOutcome 
+                image={cyberCareer}
+                topic='Prepare to become a Cloud computing Specialist'
                 objective={
                     ["Demonstrate your proficiency in portolio-ready projects",
-                    "Earn your Diploma Certificate",
-                    "Quality for in-demand job roles as a Data Analyst"
+                        "Earn your Diploma Certificate",
+                        "Quality for in-demand job roles as a Cloud computing Specialist"
                     ]
                 } 
             />

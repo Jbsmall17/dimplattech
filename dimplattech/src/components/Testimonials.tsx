@@ -8,8 +8,8 @@ import 'swiper/css';
 
 export default function Testimonials() {
   return (
-    <section className='mb-20 px-[5%]'>
-        <p className="text-2xl font-semibold mb-16 text-center">What Our Students Say</p>
+    <section className='mb-10 sm:mb-12 lg:mb-16 xl:mb-20 px-[5%]'>
+        <p className="text-xl sm:text-2xl font-semibold mb-6 sm:mb-8 lg:mb-12 xl:mb-16 text-center">What Our Students Say</p>
         <Swiper
             spaceBetween={30}
             slidesPerView={1}

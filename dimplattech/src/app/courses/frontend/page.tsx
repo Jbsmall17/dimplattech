@@ -15,7 +15,9 @@ import CareerOutcome from '@/components/CareerOutcome'
 export default function page() {
   return (
     <main>
-        <Header />
+        <Header 
+            page={"course"}
+        />
         <CourseHero
             image={frontendBgImg}
             name={<>FRONT END DEVELOPMENT</>}

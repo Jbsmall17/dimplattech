@@ -17,7 +17,9 @@ import Footer from '@/components/Footer'
 export default function page() {
   return (
     <main>
-      <Header />
+      <Header 
+        page={"course"}
+      />
       <CourseHero
         image={productDesignImage}
         name={<React.Fragment>PRODUCT DESIGN (UI/UX<br/> DESIGN)</React.Fragment>}

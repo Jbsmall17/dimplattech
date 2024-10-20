@@ -7,8 +7,13 @@ import { MdClose } from "react-icons/md"
 import { useRouter } from 'next/navigation'
 
 
-export default function Header() {
+interface headerObjProps{
+  page: string
+}
+
+export default function Header({page}:headerObjProps) {
   const [isMenuOpen,setIsMenuOpen] = useState(false)
+  const [activePage,setActivePage] = useState(page)
   const router = useRouter()
 
   const handleNavigation = (route : string) =>{
@@ -28,9 +33,9 @@ export default function Header() {
       </div>
       <nav className='hidden sm:flex sm:gap-[25px] md:gap-[50px] lg:gap-[125px] xl:gap-[225px] 2xl:gap-[300px] items-center'>
         <ul className='flex sm:gap-[15px] md:gap-[25px] lg:gap-[35px] xl:gap-[50px] items-center'>
-            <li className='h-[22px] cursor-pointer hover:border-b-2 hover:border-[#219dd0] text-[#777A79] text-sm whitespace-nowrap'>Home</li>
-            <li onClick={()=>handleNavigation("/about-us")} className='h-[22px] cursor-pointer hover:border-b-2 hover:border-[#219dd0] text-[#777A79] text-sm whitespace-nowrap'>About Us</li>
-            <li className='h-[22px] cursor-pointer hover:border-b-2 hover:border-[#219dd0] text-[#777A79] text-sm whitespace-nowrap'>Courses</li>
+            <li onClick={()=>handleNavigation("/")} className={`h-[22px] cursor-pointer hover:border-b-2 ${activePage == "home" && "border-b-2 border-[#219dd0]" } hover:border-[#219dd0] text-[#777A79] text-sm whitespace-nowrap`}>Home</li>
+            <li onClick={()=>handleNavigation("/about-us")} className={`h-[22px] cursor-pointer hover:border-b-2 ${activePage == "about" && "border-b-2 border-[#219dd0]" }  hover:border-[#219dd0] text-[#777A79] text-sm whitespace-nowrap`}>About Us</li>
+            <li className={`h-[22px] cursor-pointer  ${activePage == "course" && "border-b-2 border-[#219dd0]" } hover:border-b-2 hover:border-[#219dd0] text-[#777A79] text-sm whitespace-nowrap`}>Courses</li>
             <li className='h-[22px] cursor-pointer hover:border-b-2 hover:border-[#219dd0] text-[#777A79] text-sm whitespace-nowrap'>Our Team</li>
         </ul>
         <div className='flex sm:gap-[5px] md:gap-[15px] lg:gap-[25px] items-center'>
@@ -55,7 +60,7 @@ export default function Header() {
       }
       <nav className={`px-[5%] ${isMenuOpen ?  "block sm:hidden" : "hidden"} absolute z-10 left-0 top-full bg-[#0F1022] w-full`}>
         <ul className='text-[#777A79]'>
-            <li className='py-2 text-center cursor-pointer text-sm border-b border-b-[#219dd0]'>Home</li>
+            <li onClick={()=>handleNavigation("/")} className='py-2 text-center cursor-pointer text-sm border-b border-b-[#219dd0]'>Home</li>
             <li onClick={()=>handleNavigation("/about-us")} className='py-2 text-center cursor-pointer text-sm border-b border-b-[#219dd0]'>About Us</li>
             <li className='py-2 text-center cursor-pointer text-sm border-b border-b-[#219dd0]'>Courses</li>
             <li className='py-2 text-center cursor-pointer text-sm border-b border-b-[#219dd0]'>Our Team</li>

@@ -11,12 +11,12 @@ import cybersecurity from "../assests/dim_cyberAnalyst.png"
 
 export default function Teams() {
   return (
-    <section className='mb-20 px-[5%]'>
-      <p className="text-2xl font-semibold mb-4 text-center text-[#4d4d4d]">Our Team</p>
-      <p className="text-center text-base text-[#777A79] mb-10">
+    <section className='mb-10 sm:mb-12 lg:mb-16 xl:mb-20 px-[5%]'>
+      <p className="text-xl sm:text-2xl font-semibold mb-2 sm:mb-4 text-center text-[#4d4d4d]">Our Team</p>
+      <p className="text-center text-base text-[#777A79] mb-4 sm:mb-6 lg:mb-8 xl:mb-10">
         Our team is a group of instructors who are industry experts with years of experience in their respective fields. 
       </p>
-      <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-8'>
+      <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-4 sm:gap-6 lg:gap-8'>
         <Team 
             image={productDesigner}
         />

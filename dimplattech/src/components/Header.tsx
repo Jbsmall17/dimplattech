@@ -58,7 +58,7 @@ export default function Header({page}:headerObjProps) {
             className='block cursor-pointer sm:hidden text-white text-2xl'
             />
       }
-      <nav className={`px-[5%] ${isMenuOpen ?  "block sm:hidden" : "hidden"} absolute z-10 left-0 top-full bg-[#0F1022] w-full`}>
+      <nav className={`px-[5%] ${isMenuOpen ?  "block sm:hidden" : "hidden"} absolute z-30 left-0 top-full bg-[#0F1022] w-full`}>
         <ul className='text-[#777A79]'>
             <li onClick={()=>handleNavigation("/")} className='py-2 text-center cursor-pointer text-sm border-b border-b-[#219dd0]'>Home</li>
             <li onClick={()=>handleNavigation("/about-us")} className='py-2 text-center cursor-pointer text-sm border-b border-b-[#219dd0]'>About Us</li>

@@ -24,9 +24,9 @@ export default function AboutUs() {
         <Header 
             page={"about"}
         />
-        <section className='relative h-[85vh]'>
+        <section className='hero-div relative'>
             <Image className='block w-full h-full' src={aboutHeroImage} alt={"about page hero image"} />
-            <h1  className='absolute top-[50%] left-[50%] -translate-y-[50%] -translate-x-[50%] text-3xl font-semibold text-white'>About <span className='text-[#219dd0]'>Us</span></h1>
+            <h1  className='absolute top-[50%] left-[50%] -translate-y-[50%] -translate-x-[50%]  text-3xl sm:text-4xl lg:text-5xl font-semibold text-white'>About <span className='text-[#219dd0]'>Us</span></h1>
         </section>
         <section className='px-[5%] mt-4 sm:mt-6 md:mt-8 lg:mt-10 xl:mt-12 mb-4 sm:mb-6 lg:mb-8 xl:mb-10'>
             <h2 className='text-xl mb-2 sm:mb-4 text-black font-semibold'>KNOW US MORE</h2>
@@ -36,7 +36,7 @@ export default function AboutUs() {
                 <p>we envision becoming a leading and preferred technology training provider in Nigeria, responding to needs of the industry. Our mission is to provide high-quality and affordable technology training that the needs of our students</p>
             </div>
         </section>
-        <section className='h-[87vh] relative bg-[#e0eaf1] px-[5%] p-3 md:p-6'>
+        <section className='h-[70vh] lg:h-[87vh] relative bg-[#e0eaf1] px-[5%] p-3 md:p-6'>
             <div className='absolute z-10 top-6 left-[5%] pl-3 md:pl-6'>
                 <Image className='absolute top-0 left-0 w-[16px] md:w-[20px]' src={quoteLeft}  alt="quote left"/>
                 <div className='flex justify-start'>

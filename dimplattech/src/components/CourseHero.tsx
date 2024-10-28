@@ -26,8 +26,6 @@ export default function CourseHero({name,desc,month,image}:courseHeroProps) {
 
     const clickHandler = (e : MouseEvent<HTMLElement>) => {
         const targetElement = e.target as HTMLDivElement
-        // console.log(Array.from(targetElement.classList).indexOf('close-duration'))
-        // duration-icon
         const targetElementArray = Array.from(targetElement.classList)
         if(targetElementArray.indexOf('close-duration') >=0){
             setIsDurationVisible(false)
@@ -37,7 +35,7 @@ export default function CourseHero({name,desc,month,image}:courseHeroProps) {
         // console.log(targetElement)
     }
     return (
-    <section onClick={(e)=> clickHandler(e)} className='close-duration product-design relative h-[85vh] px-[5%] pt-4 sm:pt-8 md:pt-12'>
+    <section onClick={(e)=> clickHandler(e)} className='close-duration product-design relative hero-div2 px-[5%] pt-4 sm:pt-8 md:pt-12'>
         <Image className='close-duration z-[-1] block absolute top-0 left-0 w-full h-full' src={image} alt={`${name} hero image`}/>
         <div className='close-duration absolute z-10 bg-black opacity-70 h-full w-full top-0 left-0'></div>
         <div className='close-duration relative z-20 flex flex-row gap-8 md:items-center justify-between'>
@@ -64,38 +62,38 @@ export default function CourseHero({name,desc,month,image}:courseHeroProps) {
                     </select>
                     <ul className='mt-4'>
                         <li className='flex gap-2 items-center mb-2'>
-                            <div className='h-[28px] w-[28px] rounded-full  bg-[#219dd0] flex justify-center items-center'>
+                            <div className='h-[24px] md:h-[28px] w-[24px] md:w-[28px] rounded-full  bg-[#219dd0] flex justify-center items-center'>
                                 <Image src={durationSvg} alt='duration svg' className='w-[16px] h-[16px]' />
                             </div>
                             <div>
-                                <p className='text-white leading-none'>Duration</p>
-                                <p className='text-xl font-semibold text-white leading-none'>{month} Months</p>
+                                <p className='text-sm md:text-base text-white leading-none'>Duration</p>
+                                <p className='text-lg md:text-xl font-semibold text-white leading-none'>{month} Months</p>
                             </div>
                         </li>
                         <li className='flex gap-2 items-center mb-2'>
-                            <div className='h-[28px] w-[28px] rounded-full  bg-[#219dd0] flex justify-center items-center'>
+                            <div className='h-[24px] md:h-[28px] w-[24px] md:w-[28px] rounded-full  bg-[#219dd0] flex justify-center items-center'>
                                 <Image src={certificateSvg} alt='duration svg' className='w-[16px] h-[16px]' />
                             </div>
                             <div>
-                                <p className='text-white leading-none'>Certificate</p>
-                                <p className='text-xl font-semibold text-white leading-none'>YES</p>
+                                <p className='text-sm md:text-base text-white leading-none'>Certificate</p>
+                                <p className='text-lg md:text-xl font-semibold text-white leading-none'>YES</p>
                             </div>
                         </li>
                         <li className='flex gap-2 items-center mb-2'>
-                            <div className='h-[28px] w-[28px] rounded-full  bg-[#219dd0] flex justify-center items-center'>
+                            <div className='h-[24px] md:h-[28px] w-[24px] md:w-[28px] rounded-full  bg-[#219dd0] flex justify-center items-center'>
                                 <Image src={instructorSvg} alt='duration svg' className='w-[16px] h-[16px]' />
                             </div>
                             <div>
-                                <p className='text-white leading-none'>Instructor-Led Course</p>
-                                <p className='text-xl font-semibold text-white leading-none'>YES</p>
+                                <p className='text-sm md:text-base text-white leading-none'>Instructor-Led Course</p>
+                                <p className='text-lg md:text-xl font-semibold text-white leading-none'>YES</p>
                             </div>
                         </li>
                     </ul>
                     <div className='flex justify-center'>
                         <button 
-                            className='text-center h-[40px] flex items-center px-12 text-[#219dd0] bg-white rounded-lg hover:text-white hover:bg-transparent hover:border hover:border-[#219dd0] transition ease-out duration-700 font-semibold'
+                            className='text-center h-[32px] md:h-[40px] flex items-center px-12 text-[#219dd0] bg-white rounded-lg hover:text-white hover:bg-transparent hover:border hover:border-[#219dd0] transition ease-out duration-700 font-semibold'
                         >
-                            Enrol Now
+                            <p className='leading-none'>Enrol Now</p>
                         </button>
                     </div>
                 </div>

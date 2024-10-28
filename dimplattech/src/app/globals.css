@@ -44,3 +44,24 @@
   backdrop-filter: blur(10px); /* Blur effect */
   -webkit-backdrop-filter: blur(10px); /* For Safari */
 }
+
+.hero-div{
+  aspect-ratio: 5 / 3;
+}
+
+.hero-div2{
+  aspect-ratio: 5 / 3.75 ;
+}
+
+@media screen and (min-width: 768px) {
+  .hero-div, .hero-div2{
+    aspect-ratio: 5 / 2.5;
+  } 
+}
+
+
+@media screen and (min-width: 1024px) {
+  .hero-div,.hero-div2{
+    aspect-ratio: 5 / 2;
+  } 
+}

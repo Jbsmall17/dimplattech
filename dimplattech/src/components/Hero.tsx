@@ -20,7 +20,7 @@ export default function Hero() {
             </button>
             <button className='group relative w-[125px] h-[36px] flex gap-1 items-center rounded-lg hover:border hover:border-[#219dd0] transition-all duration-500 ease-linear hover:bg-white'>
                 <div className='absolute group-hover:top-1 group-hover:left-2 -z-10 top-0 left-0 h-[30px] w-[30px] bg-[#219dd0] rounded-full transition-all duration-500 ease-linear'></div>
-                <p className='ml-2 font-semibold text-black group-hover:text-[#219dd0]'>View Courses</p>
+                <p className='ml-2 font-semibold text-black group-hover:text-[#219dd0] whitespace-nowrap'>View Courses</p>
                 <HiArrowLongRight className='group-hover:text-[#219dd0] translate-y-[15%]' />
             </button>
         </div>

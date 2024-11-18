@@ -26,7 +26,7 @@ export default function page() {
             <p className='text-xl lg:text-2xl font-semibold mb-3'>Defaults</p>
             <p className='text-base lg:text-lg font-semibold mb-3'>
                 Students who fail to comply with the payment structure and timeline above 
-                may be suspended from accessing Dimplattech's classroom and learning resources pending their complete compliance. This policy however, will take effect if after two.(2) consecutive payment reminders from the management, the student fails, refuses and, or neglects to comply.
+                may be suspended from accessing Dimplattech&apos;s classroom and learning resources pending their complete compliance. This policy however, will take effect if after two.(2) consecutive payment reminders from the management, the student fails, refuses and, or neglects to comply.
             </p>
             <p className='text-xl lg:text-2xl font-semibold mb-3'>Rollover & Deferment</p>
             <p className='text-base lg:text-lg font-semibold mb-2'>
@@ -57,7 +57,7 @@ export default function page() {
             <p className='text-xl lg:text-2xl font-semibold mb-3'>Attendance</p>
             <p className='text-base lg:text-lg font-semibold mb-3'>
                 Every student is required to attend and complete classes that are held during their program. Dimplattech will bear no liability for 
-                lack of comprehension, poor performance or inability to complete the student's academic program which may be as a result of incomplete attendance record.
+                lack of comprehension, poor performance or inability to complete the student&apos;s academic program which may be as a result of incomplete attendance record.
             </p>
             <p className='text-base lg:text-lg font-semibold mb-3'>
                 In the event a student is unable to meet up with classes for a day, they must send a notice to the mentor in charge of his or her class or Dimplattech Management

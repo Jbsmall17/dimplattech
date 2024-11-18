@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Subscribe() {
   return (
-    <section className='bg-[#7a7a7a] px-[5%] py-8 sm:py-12 lg:py-16 flex flex-col sm:flex-row gap-8 sm:gap-2 justify-between sm:items-center mb-16'>
+    <section className='bg-[#219dd0] px-[5%] py-8 sm:py-12 lg:py-16 flex flex-col sm:flex-row gap-8 sm:gap-2 justify-between sm:items-center mb-16'>
       <div className='flex-1 lg:flex-[2]'>
         <p className='text-xl text-white'>Subscribe to Our News Letter</p>
         <p className='text-sm text-white'>Subscribe today and get special offers, coupons and news</p>

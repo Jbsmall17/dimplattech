@@ -4,7 +4,7 @@ import { FaInstagram,FaFacebookF,FaXTwitter,FaLinkedinIn } from "react-icons/fa6
 
 export default function Footer() {
   return (
-    <footer className='bg-[#7a7a7a] pt-6 sm:pt-8 lg:pt-10 pb-2 sm:pb-4 lg:pb-6'>
+    <footer className='bg-[#219dd0] pt-6 sm:pt-8 lg:pt-10 pb-2 sm:pb-4 lg:pb-6'>
       <div className='flex flex-col sm:flex-row gap-4 mb-4 px-[5%]'>
         <div className='flex-1 self-center sm:self-end'>
             <p className='text-sm text-center sm:text-start text-[#cfcfcf] mb-2'>Follow Us:</p>

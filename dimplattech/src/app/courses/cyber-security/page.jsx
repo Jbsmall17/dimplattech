@@ -1,3 +1,4 @@
+"use client"
 import React from 'react'
 import cyberSecurityImg from "../../../assests/cyberSecurity.png"
 import cyberCareer from "../../../assests/cybersecurity-career.png"

@@ -1,8 +1,10 @@
+"use client"
 import React from "react"
 import Service from "./Service"
 import image1 from "../assests/why-image-1.png"
 import image2 from "../assests/why-image-2.png"
 import image3 from "../assests/why-image-3.png"
+import { motion } from "motion/react"
 
 export default function Services(){
     return (
@@ -14,7 +16,12 @@ export default function Services(){
                 by providing extra value to ensure you excel in <br /> 
                 your chosen course..
             </p>
-            <div className="flex flex-wrap gap-[3vw] sm:gap-[4.5vw] sm:justify-center xl:justify-start xl:gap-[2.75%]">
+            <motion.div 
+                initial={{opacity:0, y: 100}} 
+                whileInView={{opacity:1, y: 0}} 
+                transition={{ delay: 0.5}} 
+                viewport={{once: true}}
+                className="flex flex-wrap gap-[3vw] sm:gap-[4.5vw] sm:justify-center xl:justify-start xl:gap-[2.75%]">
                 <Service 
                     image={image1}
                 >
@@ -46,7 +53,7 @@ export default function Services(){
                         design skills in a product team
                     </p>
                 </Service>
-            </div>
+            </motion.div>
         </section>
     )
 }

@@ -11,6 +11,7 @@ import CourseFee from '@/components/CourseFee'
 import Subscribe from '@/components/Subscribe'
 import Footer from '@/components/Footer'
 import CareerOutcome from '@/components/CareerOutcome'
+import { motion } from "motion/react"
 
 
 export default function page() {
@@ -37,7 +38,12 @@ export default function page() {
             {
                       cyberSecurity.map(({title,description},idx)=>{
                             return (
-                                <div key={idx} className='flex flex-row gap-4 mb-3'>
+                                <motion.div 
+                                  initial={{x:"-100%", opacity: 0}} 
+                                  transition={{delay: 0.25, duration: 0.3, type:"spring"}} 
+                                  whileInView={{x:"0", opacity: 1}}
+                                  viewport={{once: true}}
+                                  key={idx} className='flex flex-row gap-4 mb-3'>
                                     <div className='w-[20px] shrink-0'>
                                         <Image src={starIcon} alt='star icon' className='block w-full translate-y-[17.5%]' />
                                     </div>
@@ -51,7 +57,7 @@ export default function page() {
                                             }
                                         </ul>
                                     </div>
-                                </div>
+                                </motion.div>
                             )
                         })
                     }

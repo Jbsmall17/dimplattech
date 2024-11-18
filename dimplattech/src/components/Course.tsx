@@ -2,7 +2,7 @@
 import Image, { StaticImageData } from 'next/image'
 import React from 'react'
 import { useRouter } from 'next/navigation'
-
+import { motion } from "motion/react"
 interface courseProp{
     image: StaticImageData,
     name: string,
@@ -18,7 +18,13 @@ export default function Course({image,name,desc,courseRoute }: courseProp) {
   }
 
   return (
-    <div className='p-3 bg-white rounded-lg'>
+    <motion.div 
+      initial={{opacity:0, y: 50}} 
+      whileInView={{opacity:1, y: 0}} 
+      transition={{ delay: 0.5}} 
+      viewport={{once: true}}
+      className='p-3 bg-white rounded-lg'
+    >
       <div className='w-full mb-4'>
         <Image style={{aspectRatio: 4/3}} className='block w-full rounded-lg' src={image} alt="course pictoral represantation" />
       </div>
@@ -29,6 +35,6 @@ export default function Course({image,name,desc,courseRoute }: courseProp) {
         onClick={()=>handleNavigation(courseRoute)}
         className='border border-[#219dd0] leading-none bg-white py-2 px-8 rounded-lg hover:bg-[#219dd0] hover:text-white transition duration-500 ease-linear'>Register</button>
       </div>
-    </div>
+    </motion.div>
   )
 }

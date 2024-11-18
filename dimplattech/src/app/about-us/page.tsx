@@ -1,3 +1,4 @@
+"use client"
 import Image from 'next/image'
 import React from 'react'
 import aboutHeroImage from "../../assests/about-us.png"
@@ -16,6 +17,7 @@ import { FaXTwitter } from 'react-icons/fa6'
 import { CiMail } from 'react-icons/ci'
 import polygon from "../../assests/dotted_polygon.png"
 import polygonImage from "../../assests/ploygon_image.png"
+import { motion } from "motion/react"
 
 
 export default function AboutUs() {
@@ -28,16 +30,27 @@ export default function AboutUs() {
             <Image className='block w-full h-full' src={aboutHeroImage} alt={"about page hero image"} />
             <h1  className='absolute top-[50%] left-[50%] -translate-y-[50%] -translate-x-[50%]  text-3xl sm:text-4xl lg:text-5xl font-semibold text-white'>About <span className='text-[#219dd0]'>Us</span></h1>
         </section>
-        <section className='px-[5%] mt-4 sm:mt-6 md:mt-8 lg:mt-10 xl:mt-12 mb-4 sm:mb-6 lg:mb-8 xl:mb-10'>
+        <motion.section 
+            initial={{x: "-100%",opacity:0}}
+            whileInView={{x:"0", opacity:1}}
+            transition={{duration:1, type: "spring", stiffness:100}}
+            viewport={{once: true}}
+            className='px-[5%] mt-4 sm:mt-6 md:mt-8 lg:mt-10 xl:mt-12 mb-4 sm:mb-6 lg:mb-8 xl:mb-10'
+        >
             <h2 className='text-xl mb-2 sm:mb-4 text-black font-semibold'>KNOW US MORE</h2>
             <div className='flex flex-col gap-2 text-black text-base'>
                 <p>Dimplettech Academy is atech training companty based in Lagos, Nigeria, founded in 2023with objective of providing cost-effective high-quality tech education to aspiring young people in the country.</p>
                 <p>Over the past one year, the academy has trianed over 200 students through both online and in-person classes, and has helped then achieve thier carrer goals in the tech industry. Our instructors are carefully selected based on both industry experience and teaching ability, ensuring that our students recieve the best possible education</p>
                 <p>we envision becoming a leading and preferred technology training provider in Nigeria, responding to needs of the industry. Our mission is to provide high-quality and affordable technology training that the needs of our students</p>
             </div>
-        </section>
+        </motion.section>
         <section className='h-[70vh] lg:h-[87vh] relative bg-[#e0eaf1] px-[5%] p-3 md:p-6'>
-            <div className='absolute z-10 top-6 left-[5%] pl-3 md:pl-6'>
+            <motion.div
+                initial={{x:"-100%", opacity:0}}
+                whileInView={{x:"0", opacity: 1}}
+                viewport={{once: true}}
+                className='absolute z-10 top-6 left-[5%] pl-3 md:pl-6'
+            >
                 <Image className='absolute top-0 left-0 w-[16px] md:w-[20px]' src={quoteLeft}  alt="quote left"/>
                 <div className='flex justify-start'>
                 <div className='mb-2 sm:mb-4'>
@@ -46,14 +59,28 @@ export default function AboutUs() {
                 </div>
                 </div>
                 <p className='text-xs sm:text-base text-black'>To train our students effectively and provide beneficial knowledge to them<br /> using the most effective approach.</p>
-            </div>
-            <div className='w-[150px] md:w-[200px] absolute top-4 md:top-6 right-[5%]'>
+            </motion.div>
+            <motion.div 
+                initial={{scale:0}}
+                whileInView={{scale: 1}}
+                viewport={{once: true}}
+                transition={{delay:0.3}}
+                className='w-[150px] md:w-[200px] absolute top-4 md:top-6 right-[5%]'>
                 <Image src={arrowImg} alt="arrow image" className='w-full block' />
-            </div>
-            <div className='w-[150px] md:w-[200px] absolute left-[5%] bottom-0 md:bottom-6'>
+            </motion.div>
+            <motion.div 
+                initial={{scale:0}}
+                whileInView={{scale: 1}}
+                viewport={{once: true}}
+                transition={{delay:0.3}}
+                className='w-[150px] md:w-[200px] absolute left-[5%] bottom-0 md:bottom-6'>
                 <Image src={progressCurve} className='w-full block' alt="progree curve" />
-            </div>
-            <div className='absolute z-10 text-end bottom-24 md:bottom-28 lg:bottom-32 right-[5%] pr-6'>
+            </motion.div>
+            <motion.div 
+                initial={{x:"100%", opacity:0}}
+                whileInView={{x:"0", opacity: 1}}
+                viewport={{once: true}}
+                className='absolute z-10 text-end bottom-24 md:bottom-28 lg:bottom-32 right-[5%] pr-6'>
                 <Image src={quoteRight} className='absolute top-0 right-0 w-[16px] md:w-[20px]' alt="quote left"/>
                 <div className='flex justify-end'>
                     <div className='mb-2 sm:mb-4'>
@@ -62,7 +89,7 @@ export default function AboutUs() {
                     </div>
                 </div>
                 <p className='text-xs sm:text-base text-black'>To make learning as simple as possible thereby creating the best approach of<br /> impacting knowledge and to better community of learning to the<br /> world.</p>
-            </div>
+            </motion.div>
         </section>
         <Services />
         <Testimonials />

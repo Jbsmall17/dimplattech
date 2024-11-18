@@ -1,11 +1,11 @@
 "use client"
-
 import Image, { StaticImageData } from 'next/image'
 import React, { MouseEvent, useState } from 'react'
 import { FaWhatsapp } from "react-icons/fa6"
 import durationSvg from "../assests/duration.svg"
 import certificateSvg from "../assests/certificate.svg"
 import instructorSvg from "../assests/instructor.svg"
+import { motion,AnimatePresence } from "motion/react"
 
 interface courseHeroProps{
     name: JSX.Element,
@@ -38,12 +38,18 @@ export default function CourseHero({name,desc,month,image}:courseHeroProps) {
     <section onClick={(e)=> clickHandler(e)} className='close-duration product-design relative hero-div2 px-[5%] pt-4 sm:pt-8 md:pt-12'>
         <Image className='close-duration z-[-1] block absolute top-0 left-0 w-full h-full' src={image} alt={`${name} hero image`}/>
         <div className='close-duration absolute z-10 bg-black opacity-70 h-full w-full top-0 left-0'></div>
-        <div className='close-duration relative z-20 flex flex-row gap-8 md:items-center justify-between'>
-            <div>
+        <div 
+            className='close-duration relative z-20 flex flex-row gap-8 md:items-center justify-between'
+        >
+            <motion.div
+                initial={{x:"-100%", opacity: 0}} 
+                transition={{duration: 0.5, type: "spring", stiffness:100 }} 
+                animate={{x:"0", opacity: 1}}
+            >
                <p className='close-duration  text-xl sm:text-2xl lg:text-3xl mb-4 sm:mb-6 font-semibold text-[#219dd0]'>{name}</p>
                 <p className='close-duration  text-base text-white mb-6'>{desc}</p> 
                 <button className='close-duration  h-[40px] flex items-center px-6 rounded-lg bg-white text-[#219dd0] text-base font-semibold hover:text-white hover:bg-transparent hover:border hover:border-[#219dd0] transition ease-out duration-700'>Register</button>
-            </div>
+            </motion.div>
             <div className='relative shrink-0'>
                 <Image 
                     src={durationSvg} 
@@ -51,10 +57,15 @@ export default function CourseHero({name,desc,month,image}:courseHeroProps) {
                     className='w-[24px] h-[24px] block md:hidden duration-icon' 
                     onClick={clickDurationHandler}
                     />
+                <AnimatePresence>
                 {
                     isDurationVisible
                     &&
-                    <div id="durationEl" className='absolute right-0 block md:hidden'>
+                    <motion.div 
+                        initial={{scale:0}}
+                        animate={{scale:1}}
+                        exit={{scale:0}}
+                        id="durationEl" className='absolute right-0 block md:hidden'>
                 <div className='glassmorphism rounded-2xl py-2 px-3 min-w-[225px]'>
                     <p className='text-white text-xl font-semibold mb-2'>Cohort Start Month</p>
                     <select name="" id="" className='bg-transparent border border-white text-white w-[75%] p-1'>
@@ -97,11 +108,16 @@ export default function CourseHero({name,desc,month,image}:courseHeroProps) {
                         </button>
                     </div>
                 </div>
-                    </div>
+                    </motion.div>
                 }
+                </AnimatePresence>
             </div>
             
-            <div className='hidden md:block'>
+            <motion.div
+                initial={{scale:0}}
+                animate={{scale:1}}
+                transition={{delay:0.5, type:"linear"}} 
+                className='hidden md:block'>
                 <div className='glassmorphism rounded-2xl py-4 px-3 min-w-[300px] '>
                     <p className='text-white text-xl font-semibold mb-2'>Cohort Start Month</p>
                     <select name="" id="" className='bg-transparent border border-white text-white w-[75%] p-1'>
@@ -144,7 +160,7 @@ export default function CourseHero({name,desc,month,image}:courseHeroProps) {
                         </button>
                     </div>
                 </div>
-            </div>
+            </motion.div>
         </div>
         <a className='absolute z-20 bottom-6 left-[5%] flex flex-row gap-2 items-center' href="tel:+2348165402158">
             <FaWhatsapp  className='text-[#60d669]'/>

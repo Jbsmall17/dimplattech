@@ -1,5 +1,6 @@
+"use client"
 import React from 'react'
-
+import { motion } from "motion/react"
 interface courseFeePropsObj{
     onSite: {
         private: string,
@@ -21,7 +22,12 @@ export default function CourseFee({onSite,virtual}: courseFeePropsObj) {
             </h2>
         </div>
         <div className='flex flex-col sm:flex-row gap-8 sm:gap-10 lg:gap-16 items-center justify-center'>
-            <div className='rounded-2xl bg-white w-[90%] max-w-[325px]'>
+            <motion.div 
+                initial={{x:"-100%", opacity: 0}} 
+                transition={{delay: 0.25, duration: 0.5, type:"linear"}} 
+                whileInView={{x:"0", opacity: 1}}
+                viewport={{once: true}}
+                className='rounded-2xl bg-white w-[90%] max-w-[325px]'>
                 <p 
                     className='py-4 text-lg sm:text-xl rounded-tl-2xl rounded-tr-2xl font-semibold bg-[#219dd0] text-center'
                 >
@@ -39,8 +45,13 @@ export default function CourseFee({onSite,virtual}: courseFeePropsObj) {
                         <button className='py-2 px-8 leading-none rounded-lg text-center text-[#219dd0] border border-[#219dd0]'>Enrol Now</button>
                     </div>
                 </div>
-            </div>
-            <div className='rounded-2xl bg-white w-[90%] max-w-[325px]'>
+            </motion.div>
+            <motion.div 
+                initial={{x:"100%", opacity: 0}} 
+                transition={{delay: 0.25, duration: 0.5, type:"linear"}} 
+                whileInView={{x:"0", opacity: 1}}
+                viewport={{once: true}}
+                className='rounded-2xl bg-white w-[90%] max-w-[325px]'>
                 <p
                      className='py-4 text-lg sm:text-xl rounded-tl-2xl rounded-tr-2xl font-semibold bg-black text-white text-center'
                 >
@@ -58,7 +69,7 @@ export default function CourseFee({onSite,virtual}: courseFeePropsObj) {
                         <button className='py-2 px-8 leading-none rounded-lg text-center text-[#219dd0] border border-[#219dd0]'>Enrol Now</button>
                     </div>
                 </div>
-            </div>
+            </motion.div>
         </div>
     </section>
   )

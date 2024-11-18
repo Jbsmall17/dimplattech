@@ -1,13 +1,20 @@
+"use client"
 import React from 'react'
 import { HiArrowLongRight } from "react-icons/hi2"
 import heroImage1 from "../assests/hero-image-1.png"
 import heroImage2 from "../assests/hero-image-2.png"
 import Image from 'next/image';
+import { motion } from "motion/react"
 
 export default function Hero() {
   return (
     <section className='flex flex-col md:flex-row gap-8 md:gap-4 lg:gap-6 sm:my-4 sm:my-6 lg:my-10 px-[5%]'>
-      <div className='flex-1'>
+      <motion.div 
+        initial={{x:"-100%", opacity: 0}} 
+        transition={{duration: 0.5, type: "spring", stiffness:100 }} 
+        animate={{x:"0", opacity: 1}} 
+        className='flex-1'
+      >
         <p className='my-4 sm:my-6 lg:my-8 text-2xl sm:text-4xl lg:text-6xl text-[#219dd0] font-bold text-center md:text-start'>Buliding A Tech Commuinty!</p>
         <p className='text-base sm:text-lg text-center md:text-start text-[#777A79] my-4 sm:my-6 lg:mb-8'>
             A community  where one can gain technological
@@ -24,10 +31,14 @@ export default function Hero() {
                 <HiArrowLongRight className='group-hover:text-[#219dd0] translate-y-[15%]' />
             </button>
         </div>
-      </div>
+      </motion.div>
       <div className='flex-1 w-full relative min-h-[300px] md:min-h-[350px] lg:min-h-[450px] xl:min-h-[500px]'>
-        <Image src={heroImage1} className='w-[225px] md:w-[275px] lg:w-[350px] xl:w-[400px] absolute top-0 left-[50%] -translate-x-[50%] md:-translate-x-[0%] md:left-16' alt='hero image 1' />
-        <Image src={heroImage2} className='w-[150px] md:w-[175px] lg:w-[250px] xl:w-[300px] absolute bottom-0 right-[15%] md:right-0'  alt='hero image 2'/>
+        <motion.div initial={{scale:0}} animate={{scale: 1}} transition={{delay:0.5, type: "linear",duration:0.5}} className='w-[225px] md:w-[275px] lg:w-[350px] xl:w-[400px] absolute top-0 left-[50%] -translate-x-[50%] md:-translate-x-[0%] md:left-16'>
+        <Image src={heroImage1} className='w-full h-full' alt='hero image 1' />
+        </motion.div>
+        <motion.div initial={{scale:0}} animate={{scale: 1}} transition={{delay:1, ease: "linear",duration:0.5}} className='w-[150px] md:w-[175px] lg:w-[250px] xl:w-[300px] absolute bottom-0 right-[15%] md:right-0'>
+        <Image src={heroImage2} className='w-full h-full'  alt='hero image 2'/>
+        </motion.div>
       </div>
     </section>
   )

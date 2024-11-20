@@ -8,7 +8,7 @@ import { motion } from "motion/react"
 
 export default function Hero() {
   return (
-    <section className='flex flex-col md:flex-row gap-8 md:gap-4 lg:gap-6 sm:my-4 sm:my-6 lg:my-10 px-[5%]'>
+    <section className='flex flex-col md:flex-row gap-8 md:gap-4 lg:gap-6 sm:my-4 sm:my-6 lg:my-10 px-[5%] pt-[60px]'>
       <motion.div 
         initial={{x:"-100%", opacity: 0}} 
         transition={{duration: 0.5, type: "spring", stiffness:100 }} 
@@ -33,8 +33,8 @@ export default function Hero() {
         </div>
       </motion.div>
       <div className='flex-1 w-full relative min-h-[300px] md:min-h-[350px] lg:min-h-[450px] xl:min-h-[500px]'>
-        <motion.div initial={{scale:0}} animate={{scale: 1}} transition={{delay:0.5, type: "linear",duration:0.5}} className='w-[225px] md:w-[275px] lg:w-[350px] xl:w-[400px] absolute top-0 left-[50%] -translate-x-[50%] md:-translate-x-[0%] md:left-16'>
-        <Image src={heroImage1} className='w-full h-full' alt='hero image 1' />
+        <motion.div initial={{scale:0}} animate={{scale: 1}} transition={{delay:0.5, type: "linear",duration:0.5}} className='w-[225px] md:w-[275px] lg:w-[350px] xl:w-[400px] absolute top-0 left-[50%] md:left-16'>
+        <Image src={heroImage1} className='w-full h-full -translate-x-[50%] md:-translate-x-[0%]' alt='hero image 1' />
         </motion.div>
         <motion.div initial={{scale:0}} animate={{scale: 1}} transition={{delay:1, ease: "linear",duration:0.5}} className='w-[150px] md:w-[175px] lg:w-[250px] xl:w-[300px] absolute bottom-0 right-[15%] md:right-0'>
         <Image src={heroImage2} className='w-full h-full'  alt='hero image 2'/>

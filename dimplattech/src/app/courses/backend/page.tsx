@@ -14,8 +14,6 @@ import backendCareerImg from "../../../assests/backend-career.png"
 import CareerOutcome from '@/components/CareerOutcome'
 import { motion } from "motion/react"
 
-
-
 export default function page() {
   return (
     <main>

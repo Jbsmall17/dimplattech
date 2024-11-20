@@ -1,5 +1,5 @@
 "use client"
-import React, { useState } from 'react'
+import React, { useState, forwardRef, LegacyRef } from 'react'
 import Course from './Course'
 import { HiMiniArrowLongLeft, HiArrowLongRight } from "react-icons/hi2"
 import productDesign from "../assests/productDesign.png"
@@ -18,7 +18,7 @@ import graphics from "../assests/graphicDesign.png"
 
 
 
-export default function Courses() {
+export default forwardRef(function Courses(_,ref : LegacyRef<HTMLDivElement> | null) {
   const [isViewAll, setIsViewAll] =useState(false)
 
   const viewAllCourse = () =>{
@@ -26,8 +26,10 @@ export default function Courses() {
       return !prev
     })
   }
+
+
   return (
-    <section className='my-10 md:my-12 lg:my-16 xl:my-20 px-[5%]'>
+    <section ref={ref} className='my-10 md:my-12 lg:my-16 xl:my-20 px-[5%]'>
         <p className="text-xl sm:text-2xl font-semibold mb-2 sm:mb-4 text-center text-[#4d4d4d]">Certified Tech Training Courses</p>
         <p className="text-center text-base text-[#777A79] mb-4 sm:mb-6 lg:mb-8 xl:mb-10">
             We also offer live classes led by experienced instructors. These classes provide an<br /> 
@@ -136,4 +138,4 @@ export default function Courses() {
         </div>
     </section>
   )
-}
+})

@@ -1,6 +1,7 @@
 import React from 'react';
 import type { Metadata } from "next";
 import "./globals.css";
+import { ContextComp } from '@/context/context';
 
 
 export const metadata: Metadata = {
@@ -18,7 +19,9 @@ export default function RootLayout({
       <body
         className="overflow-x-hidden"
       >
-        {children}
+        <ContextComp>
+          {children}
+        </ContextComp>
       </body>
     </html>
   );

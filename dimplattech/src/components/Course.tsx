@@ -3,6 +3,7 @@ import Image, { StaticImageData } from 'next/image'
 import React from 'react'
 import { useRouter } from 'next/navigation'
 import { motion } from "motion/react"
+import Link from 'next/link'
 interface courseProp{
     image: StaticImageData,
     name: string,
@@ -21,7 +22,7 @@ export default function Course({image,name,desc,courseRoute }: courseProp) {
     <motion.div 
       initial={{opacity:0, y: 50}} 
       whileInView={{opacity:1, y: 0}} 
-      transition={{ delay: 0.5}} 
+      transition={{ delay: 0.25}} 
       viewport={{once: true}}
       className='p-3 bg-white rounded-lg'
     >
@@ -31,9 +32,12 @@ export default function Course({image,name,desc,courseRoute }: courseProp) {
       <p className='mb-2 sm:mb-4 text-[#219dd0] text-xl'>{name}</p>
       <p className='text-base text-[#4d4d4d] min-h-[120px]'>{desc}</p>
       <div className='flex justify-center mt-2'>
+        <Link href={courseRoute}>
         <button 
-        onClick={()=>handleNavigation(courseRoute)}
-        className='border border-[#219dd0] leading-none bg-white py-2 px-8 rounded-lg hover:bg-[#219dd0] hover:text-white transition duration-500 ease-linear'>Register</button>
+          className='border border-[#219dd0] leading-none bg-white py-2 px-8 rounded-lg hover:bg-[#219dd0] hover:text-white transition duration-500 ease-linear'>
+          Register
+        </button>
+        </Link>
       </div>
     </motion.div>
   )

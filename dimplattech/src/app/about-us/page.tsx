@@ -21,12 +21,12 @@ import { motion } from "motion/react"
 
 
 export default function AboutUs() {
-  return (
+    return (
     <main>
         <Header 
             page={"about"}
         />
-        <section className='hero-div relative'>
+        <section className='hero-div relative mt-[60px]'>
             <Image className='block w-full h-full' src={aboutHeroImage} alt={"about page hero image"} />
             <h1  className='absolute top-[50%] left-[50%] -translate-y-[50%] -translate-x-[50%]  text-3xl sm:text-4xl lg:text-5xl font-semibold text-white'>About <span className='text-[#219dd0]'>Us</span></h1>
         </section>

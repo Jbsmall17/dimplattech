@@ -32,10 +32,10 @@ export default function CourseHero({name,desc,month,image}:courseHeroProps) {
         }else{
             return
         }
-        // console.log(targetElement)
+
     }
     return (
-    <section onClick={(e)=> clickHandler(e)} className='close-duration product-design relative hero-div2 px-[5%] pt-4 sm:pt-8 md:pt-12'>
+    <section onClick={(e)=> clickHandler(e)} className='close-duration product-design relative hero-div2 px-[5%] pt-4 sm:pt-8 md:pt-12 mt-[60px]'>
         <Image className='close-duration z-[-1] block absolute top-0 left-0 w-full h-full' src={image} alt={`${name} hero image`}/>
         <div className='close-duration absolute z-10 bg-black opacity-70 h-full w-full top-0 left-0'></div>
         <div 

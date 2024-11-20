@@ -1,7 +1,6 @@
 "use client"
 import Image, { StaticImageData } from 'next/image'
 import React from 'react'
-import { useRouter } from 'next/navigation'
 import { motion } from "motion/react"
 import Link from 'next/link'
 interface courseProp{
@@ -12,11 +11,7 @@ interface courseProp{
   }
 
 export default function Course({image,name,desc,courseRoute }: courseProp) {
-  const router = useRouter()
 
-  const handleNavigation = (route : string) =>{
-    router.push(route)
-  }
 
   return (
     <motion.div 

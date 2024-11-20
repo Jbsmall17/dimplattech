@@ -1,4 +1,5 @@
 "use client"
+import React from "react";
 import { usePathname } from "next/navigation";
 import {createContext, Dispatch, ReactNode, RefObject, SetStateAction, useContext, useEffect, useRef, useState } from "react";
 
@@ -44,6 +45,6 @@ export const ContextComp = ({children} : {children: ReactNode}) =>{
 
 
 export const useContextValue = () =>{
-    let contextObj = useContext(context)
+    const contextObj = useContext(context)
     return contextObj
 }

@@ -12,6 +12,7 @@
 html{
   scroll-padding-top: 60px;
 }
+
 @layer base{
   body{
     @apply bg-[#f4f4f4]

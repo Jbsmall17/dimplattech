@@ -36,6 +36,7 @@ export default function Home() {
   }
   useEffect(()=>{
     if(obj?.previousRoute != "/" && obj?.activePage == "course"){
+      console.log("scroll to course")
       scrollToCourse()
     }else if(obj?.previousRoute != "/" && obj?.activePage == "our team") {
       scrollToTeam()

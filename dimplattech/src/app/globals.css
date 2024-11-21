@@ -11,6 +11,8 @@
 
 html{
   scroll-padding-top: 60px;
+  overflow-x: hidden;
+  width: 100vw;
 }
 
 @layer base{

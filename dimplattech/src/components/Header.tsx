@@ -69,7 +69,7 @@ export default function Header({page}:headerObjProps) {
     obj?.setActivePage(page)
   },[page])
   return (
-    <header className='fixed z-40 w-[100vw] left-0 top-0 bg-[#0F1022] flex justify-between items-center px-[5%] h-[60px] gap-6'>
+    <header className='fixed z-40 w-full left-0 top-0 bg-[#0F1022] flex justify-between items-center px-[5%] h-[60px] gap-6'>
       <motion.div 
         style={{scaleX:scrollYProgress, transformOrigin: 'left', y: '10px'}} 
         className='absolute z-40 bottom-0 left-0 h-[10px] w-full bg-[#219dd0]'></motion.div>

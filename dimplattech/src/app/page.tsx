@@ -1,5 +1,5 @@
 "use client"
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Courses from "@/components/Courses";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
@@ -11,6 +11,7 @@ import Testimonials from "@/components/Testimonials";
 import { useContextValue } from '@/context/context';
 
 export default function Home() {
+  const [firstRender,setFirstRender] = useState(true)
   const obj = useContextValue()
   
   const scrollToCourse = () => {
@@ -50,9 +51,9 @@ export default function Home() {
       <Header 
         page={"home"}
       />
-      <Hero />
+      <Hero scrollToCourse={scrollToCourse} />
       <Services />
-      <Courses ref={obj?.courseRef} />
+      <Courses ref={obj?.courseRef} firstRender={firstRender} setFirstRender={setFirstRender} />
       <Teams ref={obj?.teamRef} />
       <Testimonials />
       <Subscribe />

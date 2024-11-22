@@ -5,8 +5,10 @@ import heroImage1 from "../assests/hero-image-1.png"
 import heroImage2 from "../assests/hero-image-2.png"
 import Image from 'next/image';
 import { motion } from "motion/react"
+import { useContextValue } from '@/context/context'
 
-export default function Hero() {
+export default function Hero({scrollToCourse}:{scrollToCourse: () => void}) {
+  const obj = useContextValue()
   return (
     <section className='flex flex-col md:flex-row gap-8 md:gap-4 lg:gap-6 sm:my-4 sm:my-6 lg:my-10 px-[5%] pt-[60px]'>
       <motion.div 
@@ -25,7 +27,9 @@ export default function Hero() {
             <button className='w-[120px] h-[36px] rounded-lg bg-[#219dd0] text-white flex justify-center items-center hover:bg-white hover:border hover:border-[#219dd0] hover:text-[#219dd0] transition-all duration-500 ease-linear'>
                 Register
             </button>
-            <button className='group relative w-[125px] h-[36px] flex gap-1 items-center rounded-lg hover:border hover:border-[#219dd0] transition-all duration-500 ease-linear hover:bg-white'>
+            <button
+              onClick={() => {obj?.setActivePage('course'); scrollToCourse()}} 
+              className='group relative w-[125px] h-[36px] flex gap-1 items-center rounded-lg hover:border hover:border-[#219dd0] transition-all duration-500 ease-linear hover:bg-white'>
                 <div className='absolute group-hover:top-1 group-hover:left-2 -z-10 top-0 left-0 h-[30px] w-[30px] bg-[#219dd0] rounded-full transition-all duration-500 ease-linear'></div>
                 <p className='ml-2 font-semibold text-black group-hover:text-[#219dd0] whitespace-nowrap'>View Courses</p>
                 <HiArrowLongRight className='group-hover:text-[#219dd0] translate-y-[15%]' />

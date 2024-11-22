@@ -1,5 +1,5 @@
 "use client"
-import React, { useState, forwardRef, LegacyRef } from 'react'
+import React, { useState, forwardRef, LegacyRef, useEffect, Dispatch, SetStateAction } from 'react'
 import Course from './Course'
 import { HiMiniArrowLongLeft, HiArrowLongRight } from "react-icons/hi2"
 import productDesign from "../assests/productDesign.png"
@@ -14,19 +14,45 @@ import projectManagement from "../assests/projectManangement.png"
 import cyberSecurity from "../assests/cyberSecurity.png"
 import cloudComputing from "../assests/cloudComputing.png"
 import graphics from "../assests/graphicDesign.png"
+import { AnimatePresence } from 'motion/react'
+import { useContextValue } from '@/context/context'
 // import realEstate from "../assests/realEstate.png" 
 
+interface coursesCompProp {
+  firstRender: boolean,
+  setFirstRender: Dispatch<SetStateAction<boolean>>
+}
 
-
-export default forwardRef(function Courses(_,ref : LegacyRef<HTMLDivElement> | null) {
+export default forwardRef(function Courses({firstRender,setFirstRender} : coursesCompProp,ref : LegacyRef<HTMLDivElement> | null) {
   const [isViewAll, setIsViewAll] =useState(false)
+  const obj = useContextValue() 
 
   const viewAllCourse = () =>{
+    setFirstRender(false)
     setIsViewAll((prev)=>{
       return !prev
     })
   }
 
+  useEffect(()=>{
+    if(firstRender) return
+    if(obj?.courseRef){
+      if(obj.courseRef.current){
+        if(isViewAll){
+          obj.courseRef.current.scrollIntoView({
+            behavior: 'smooth',
+            block: 'end',
+          })
+        }else{
+          obj.courseRef.current.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start',
+          })
+        }
+
+      }
+    }
+  },[isViewAll])
 
   return (
     <section ref={ref} className='my-10 md:my-12 lg:my-16 xl:my-20 px-[5%]'>
@@ -72,6 +98,7 @@ export default forwardRef(function Courses(_,ref : LegacyRef<HTMLDivElement> | n
               desc={"We teach the important skills required to jumpstart your career as a full stack developer. With 24 intense weeks of training, you will learn to think and build like software developers."}
               courseRoute='/courses/fullstack'
             />
+            <AnimatePresence>
             {
               isViewAll
               &&
@@ -114,11 +141,12 @@ export default forwardRef(function Courses(_,ref : LegacyRef<HTMLDivElement> | n
                 />
               </>
             }
+            </AnimatePresence>
         </div>
         <div className='flex justify-center mt-6 lg:mt-8 xl:mt-10'>
           <button
             onClick={viewAllCourse} 
-            className='group relative px-2 h-[36px] flex items-center rounded-lg hover:border hover:border-[#219dd0] transition-all duration-500 ease-linear hover:bg-white'
+            className='group relative px-2 h-[36px] flex items-center rounded-lg focus:outline-none focus:border-none hover:border hover:border-[#219dd0] transition-all duration-500 ease-linear hover:bg-white'
           >
             <div className='absolute group-hover:top-1 group-hover:left-4 -z-10 top-0 left-2 h-[30px] w-[30px] bg-[#219dd0] rounded-full transition-all duration-500 ease-linear'></div>
             {

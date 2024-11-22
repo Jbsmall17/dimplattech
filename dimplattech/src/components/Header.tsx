@@ -15,7 +15,7 @@ interface headerObjProps{
 
 export default function Header({page}:headerObjProps) {
   const [isMenuOpen,setIsMenuOpen] = useState(false)
-  // const [activePage, setActivePage] = useState(page)
+  const [isClicked,setIsClicked] = useState(false)
   const router = useRouter()
   const {scrollYProgress} = useScroll()
   const obj = useContextValue()
@@ -71,10 +71,10 @@ export default function Header({page}:headerObjProps) {
   return (
     <header className='fixed z-40 w-full left-0 top-0 bg-[#0F1022] flex justify-between items-center px-[5%] h-[60px] gap-6'>
       <motion.div 
-        style={{scaleX:scrollYProgress, transformOrigin: 'left', y: '10px'}} 
-        className='absolute z-40 bottom-0 left-0 h-[10px] w-full bg-[#219dd0]'></motion.div>
+        style={{scaleX:scrollYProgress, transformOrigin: 'left', y: '7.5px'}} 
+        className='absolute z-40 bottom-0 left-0 h-[7.5px] w-full bg-[#219dd0]'></motion.div>
       <div>
-        <Link onClick={()=>{handleGlobalRoute(); obj?.setActivePage("home")}} href='/'>
+        <Link onClick={()=>{handleGlobalRoute(); obj?.setActivePage("home");}} href='/'>
           <Image 
             src={dimplatLogo} 
             alt='dimplat tech logo' 
@@ -112,8 +112,9 @@ export default function Header({page}:headerObjProps) {
       </nav>
       {
         !isMenuOpen
-        ? <GiHamburgerMenu
-            onClick={()=> setIsMenuOpen(true)} 
+        ? 
+        <GiHamburgerMenu
+            onClick={()=> {setIsMenuOpen(true); setIsClicked(true)}} 
             className='block cursor-pointer sm:hidden text-white text-2xl'
             />
         : <MdClose
@@ -121,20 +122,20 @@ export default function Header({page}:headerObjProps) {
             className='block cursor-pointer sm:hidden text-white text-2xl'
             />
       }
-      <nav className={`px-[5%] py-2 ${isMenuOpen ?  "block sm:hidden" : "hidden"} absolute z-30 left-0 top-full bg-[#0F1022] w-full`}>
+      <nav className={`px-[5%] py-2 ${isMenuOpen ?  "block active sm:hidden" : !isMenuOpen && isClicked ? "block sm:hidden inactive" : "hidden"} absolute z-30 left-0 top-full bg-[#0F1022] w-full`}>
         <ul className='text-[#777A79]'>
-            <Link onClick={() =>{handleGlobalRoute(); obj?.setActivePage("home")}} href='/'>
+            <Link onClick={() =>{handleGlobalRoute(); obj?.setActivePage("home"); setIsMenuOpen(false)}} href='/'>
               <li className='py-2 text-center cursor-pointer text-sm border-b border-b-[#219dd0]'>
                 Home
               </li>
             </Link>
-            <Link onClick={() =>{handleGlobalRoute(); obj?.setActivePage("about")}} href="/about-us">
+            <Link onClick={() =>{handleGlobalRoute(); obj?.setActivePage("about"); setIsMenuOpen(false)}} href="/about-us">
             <li className='py-2 text-center cursor-pointer text-sm border-b border-b-[#219dd0]'>
               About Us
             </li>
             </Link>
-            <li onClick={scrollToCourseFunc}  className='py-2 text-center cursor-pointer text-sm border-b border-b-[#219dd0]'>Courses</li>
-            <li onClick={scrollToTeamFunc}  className='py-2 text-center cursor-pointer text-sm border-b border-b-[#219dd0]'>Our Team</li>
+            <li onClick={() => {scrollToCourseFunc(); setIsMenuOpen(false)}}  className='py-2 text-center cursor-pointer text-sm border-b border-b-[#219dd0]'>Courses</li>
+            <li onClick={() => {scrollToTeamFunc(); setIsMenuOpen(false)}}  className='py-2 text-center cursor-pointer text-sm border-b border-b-[#219dd0]'>Our Team</li>
         </ul>
         <div className='text-white mt-8 flex flex-col'>
             <Link href="/signup">

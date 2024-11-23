@@ -35,7 +35,7 @@ export default function CourseHero({name,desc,month,image}:courseHeroProps) {
 
     }
     return (
-    <section onClick={(e)=> clickHandler(e)} className='close-duration product-design relative hero-div2 px-[5%] pt-4 sm:pt-8 md:pt-12 mt-[60px]'>
+    <section onClick={(e)=> clickHandler(e)} className='close-duration product-design relative hero-div2 px-[5%] pt-3 sm:pt-6 md:pt-8 lg:pt-12 mt-[60px]'>
         <Image className='close-duration z-[-1] block absolute top-0 left-0 w-full h-full' src={image} alt={`${name} hero image`}/>
         <div className='close-duration absolute z-10 bg-black opacity-70 h-full w-full top-0 left-0'></div>
         <div 
@@ -46,9 +46,9 @@ export default function CourseHero({name,desc,month,image}:courseHeroProps) {
                 transition={{duration: 0.5, type: "spring", stiffness:100 }} 
                 animate={{x:"0", opacity: 1}}
             >
-               <p className='close-duration  text-xl sm:text-2xl lg:text-3xl mb-4 sm:mb-6 font-semibold text-[#219dd0]'>{name}</p>
-                <p className='close-duration  text-base text-white mb-6'>{desc}</p> 
-                <button className='close-duration  h-[40px] flex items-center px-6 rounded-lg bg-white text-[#219dd0] text-base font-semibold hover:text-white hover:bg-transparent hover:border hover:border-[#219dd0] transition ease-out duration-700'>Register</button>
+               <p className='close-duration  text-xl sm:text-2xl lg:text-3xl mb-4 lg:mb-6 font-semibold text-[#219dd0]'>{name}</p>
+                <p className='close-duration  text-sm sm:text-base text-white mb-4 lg:mb-6'>{desc}</p> 
+                <button className='close-duration  h-[32px] lg:h-[40px] flex items-center px-6 rounded-lg bg-white text-[#219dd0] text-base font-semibold hover:text-white hover:bg-transparent hover:border hover:border-[#219dd0] transition ease-out duration-700'>Register</button>
             </motion.div>
             <div className='relative shrink-0'>
                 <Image 

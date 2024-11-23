@@ -46,8 +46,8 @@ export default function CourseHero({name,desc,month,image}:courseHeroProps) {
                 transition={{duration: 0.5, type: "spring", stiffness:100 }} 
                 animate={{x:"0", opacity: 1}}
             >
-               <p className='close-duration  text-xl sm:text-2xl lg:text-3xl mb-4 lg:mb-6 font-semibold text-[#219dd0]'>{name}</p>
-                <p className='close-duration  text-sm sm:text-base text-white mb-4 lg:mb-6'>{desc}</p> 
+               <p className='close-duration  text-xl sm:text-2xl lg:text-3xl mb-3 lg:mb-6 font-semibold text-[#219dd0]'>{name}</p>
+                <p className='close-duration  text-sm sm:text-base text-white mb-3 lg:mb-6'>{desc}</p> 
                 <button className='close-duration  h-[32px] lg:h-[40px] flex items-center px-6 rounded-lg bg-white text-[#219dd0] text-base font-semibold hover:text-white hover:bg-transparent hover:border hover:border-[#219dd0] transition ease-out duration-700'>Register</button>
             </motion.div>
             <div className='relative shrink-0'>
@@ -162,7 +162,7 @@ export default function CourseHero({name,desc,month,image}:courseHeroProps) {
                 </div>
             </motion.div>
         </div>
-        <a className='absolute z-20 bottom-4 lg:bottom-6 left-[5%] flex flex-row gap-2 items-center' href="tel:+2348165402158">
+        <a className='absolute z-20 bottom-3 lg:bottom-6 left-[5%] flex flex-row gap-2 items-center' href="tel:+2348165402158">
             <FaWhatsapp  className='text-[#60d669]'/>
             <p className='text-white'>Chat with us</p>
         </a>

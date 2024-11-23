@@ -162,7 +162,7 @@ export default function CourseHero({name,desc,month,image}:courseHeroProps) {
                 </div>
             </motion.div>
         </div>
-        <a className='absolute z-20 bottom-6 left-[5%] flex flex-row gap-2 items-center' href="tel:+2348165402158">
+        <a className='absolute z-20 bottom-4 lg:bottom-6 left-[5%] flex flex-row gap-2 items-center' href="tel:+2348165402158">
             <FaWhatsapp  className='text-[#60d669]'/>
             <p className='text-white'>Chat with us</p>
         </a>

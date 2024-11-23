@@ -23,7 +23,7 @@ export default function page() {
         />
         <CourseHero
             image={autoCadImg}
-            name={<>Computer Aided Design<br />(AutoCAD).</>}
+            name={<>Computer Aided Design (AutoCAD).</>}
             desc={<>Learn how to produce precise 2D and 3D drawings and models, electrical<br /> diagrams, construction drawings, interior designs, and more.</>}
             month={"3"}
         />

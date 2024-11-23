@@ -24,7 +24,7 @@ export default function page() {
       />
       <CourseHero
         image={productDesignImage}
-        name={<React.Fragment>PRODUCT DESIGN (UI/UX<br/> DESIGN)</React.Fragment>}
+        name={<React.Fragment>PRODUCT DESIGN (UI/UX DESIGN)</React.Fragment>}
         desc={<>Learn to design and deliver digital products that serves clients needs<br /> and solve users problems. Understanding the fundamentals and tools<br /> of design like problem definition, user research, prototyping and more.</>}
         month={"3"}
       />

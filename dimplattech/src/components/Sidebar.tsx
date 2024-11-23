@@ -1,5 +1,5 @@
 "use client"
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { FaUserCircle } from "react-icons/fa";
 import { MdPayment } from "react-icons/md";
 import { IoNotifications, IoLogOut } from "react-icons/io5";

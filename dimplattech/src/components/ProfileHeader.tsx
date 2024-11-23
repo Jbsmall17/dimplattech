@@ -23,7 +23,7 @@ export default function ProfileHeader() {
                 className='cursor-pointer'
             />
         </div>
-        <div className='flex gap-2 items-center bg-white rounded-lg px-2 py-1'>
+        <div className=' flex gap-2 items-center md:bg-white rounded-lg px-2 py-1'>
             <div className='h-[40px] w-[40px]'>
                 <Image
                     src={profileImage}
@@ -31,7 +31,7 @@ export default function ProfileHeader() {
                     className='h-full w-full'
                 />
             </div>
-            <div className='self-center'>
+            <div className='hidden md:block self-center'>
                 <p className='text-base text-black leading-none mb-1'>Olawunmi Amudat</p>
                 <p className='text-[#878790] text-sm leading-none'>amudalatmusa@gmail.com</p>
             </div>

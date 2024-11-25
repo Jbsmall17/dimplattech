@@ -6,6 +6,7 @@ import durationSvg from "../assests/duration.svg"
 import certificateSvg from "../assests/certificate.svg"
 import instructorSvg from "../assests/instructor.svg"
 import { motion,AnimatePresence } from "motion/react"
+import Link from 'next/link'
 
 interface courseHeroProps{
     name: JSX.Element,
@@ -48,7 +49,9 @@ export default function CourseHero({name,desc,month,image}:courseHeroProps) {
             >
                <p className='close-duration  text-xl sm:text-2xl lg:text-3xl mb-3 lg:mb-6 font-semibold text-[#219dd0]'>{name}</p>
                 <p className='close-duration  text-sm sm:text-base text-white mb-3 lg:mb-6'>{desc}</p> 
-                <button className='close-duration  h-[32px] lg:h-[40px] flex items-center px-6 rounded-lg bg-white text-[#219dd0] text-base font-semibold hover:text-white hover:bg-transparent hover:border hover:border-[#219dd0] transition ease-out duration-700'>Register</button>
+                <Link href="/admission-form">
+                    <button className='close-duration  h-[32px] lg:h-[40px] flex items-center px-6 rounded-lg bg-white text-[#219dd0] text-base font-semibold hover:text-white hover:bg-transparent hover:border hover:border-[#219dd0] transition ease-out duration-700'>Register</button>
+                </Link>
             </motion.div>
             <div className='relative shrink-0'>
                 <Image 
@@ -120,8 +123,20 @@ export default function CourseHero({name,desc,month,image}:courseHeroProps) {
                 className='hidden md:block'>
                 <div className='glassmorphism rounded-2xl py-4 px-3 min-w-[300px] '>
                     <p className='text-white text-xl font-semibold mb-2'>Cohort Start Month</p>
-                    <select name="" id="" className='bg-transparent border border-white text-white w-[75%] p-1'>
+                    <select name="" id="" className='bg-transparent border text-[#219dd0] rounded-lg outline-none border-white w-[75%] p-1'>
                         <option value="January">January</option>
+                        <option value="February">February</option>
+                        <option value="March">March</option>
+                        <option value="April">April</option>
+                        <option value="May">May</option>
+                        <option value="June">June</option>
+                        <option value="July">July</option>
+                        <option value="June">June</option>
+                        <option value="August">August</option>
+                        <option value="September">September</option>
+                        <option value="October">October</option>
+                        <option value="November">November</option>
+                        <option value="December">December</option>
                     </select>
                     <ul className='mt-6'>
                         <li className='flex gap-2 items-center mb-4'>
@@ -162,10 +177,10 @@ export default function CourseHero({name,desc,month,image}:courseHeroProps) {
                 </div>
             </motion.div>
         </div>
-        <a className='absolute z-20 bottom-3 lg:bottom-6 left-[5%] flex flex-row gap-2 items-center' href="tel:+2348165402158">
+        <Link target='_blank' className='absolute z-20 bottom-3 lg:bottom-6 left-[5%] flex flex-row gap-2 items-center' href="https://api.whatsapp.com/send/?phone=%2B2348165402158&text&type=phone_number&app_absent=0">
             <FaWhatsapp  className='text-[#60d669]'/>
             <p className='text-white'>Chat with us</p>
-        </a>
+        </Link>
     </section>
   )
 }

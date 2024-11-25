@@ -29,9 +29,9 @@ export default function Header({page}:headerObjProps) {
   }
 
   const scrollToCourseFunc = () => {
-    obj?.setActivePage('course');
     if(obj){
-      const {pathname, courseRef} = obj
+      const {pathname, courseRef, setActivePage} = obj
+      setActivePage('course');
       if(pathname == '/'){
           if (courseRef?.current) {
             courseRef.current.scrollIntoView({
@@ -47,9 +47,9 @@ export default function Header({page}:headerObjProps) {
   }
 
   const scrollToTeamFunc = () => {
-    obj?.setActivePage('our team');
     if(obj){
-      const {pathname, teamRef} = obj
+      const {pathname, teamRef, setActivePage} = obj
+      setActivePage('our team');
       if(pathname == '/'){
           if (teamRef?.current) {
             teamRef.current.scrollIntoView({

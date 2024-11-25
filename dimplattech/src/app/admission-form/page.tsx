@@ -3,6 +3,7 @@ import React from 'react'
 import admissionHero from "../../assests/admission-form.png"
 import { FaWhatsapp } from "react-icons/fa6"
 import Image from 'next/image'
+import Link from 'next/link'
 
 export default function page() {
   return (
@@ -204,14 +205,21 @@ export default function page() {
                     <input 
                         className='h-[24px] w-[24px]'
                         type="checkbox"  />
-                    <p className='text-xs sm:text-base font-semibold'>By checking this box, you have read and agreed with Dimplattech <span>student policy</span></p>
+                    <p className='text-xs sm:text-base font-semibold'>
+                        By checking this box, you have read and agreed with Dimplattech 
+                        <Link href="/terms&conditions"><span className='text-[#219dd0] ml-1'>student policy</span></Link>
+                    </p>
                 </div>
             </div>
             <div className='flex justify-center'>
-                <button
-                    className='h-[40px] px-8 flex items-center justify-center rounded-lg border border-[#219dd0] text-base text-[#219dd0] font-semibold hover:bg-[#219dd0] hover:border-0 hover:text-white transition duration-700'
-                    type='submit'
-                >Submit</button>
+                <Link href="/payment">
+                    <button
+                        className='h-[40px] px-8 flex items-center justify-center rounded-lg border border-[#219dd0] text-base text-[#219dd0] font-semibold hover:bg-[#219dd0] hover:border-0 hover:text-white transition duration-700'
+                        type='submit'
+                    >
+                        Submit
+                    </button>
+                </Link>
             </div>
             </div>
         </section>

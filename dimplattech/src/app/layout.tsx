@@ -7,6 +7,9 @@ import { ContextComp } from '@/context/context';
 export const metadata: Metadata = {
   title: "dimplattech",
   description: "dimplattech official website",
+  icons: {
+    icon: "/favicon.png"
+  }
 };
 
 export default function RootLayout({

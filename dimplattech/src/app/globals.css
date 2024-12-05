@@ -91,3 +91,8 @@ html{
     aspect-ratio: 5 / 2;
   } 
 }
+
+button:disabled{
+  opacity: 0.75;
+  cursor: not-allowed;
+}

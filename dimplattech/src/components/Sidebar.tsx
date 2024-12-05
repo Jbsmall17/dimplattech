@@ -4,7 +4,7 @@ import { FaUserCircle } from "react-icons/fa";
 import { MdPayment } from "react-icons/md";
 import { IoNotifications, IoLogOut } from "react-icons/io5";
 import { IoMdSettings, IoMdFastforward } from "react-icons/io";
-import { AnimatePresence, motion } from 'motion/react';2
+import { AnimatePresence, motion } from 'motion/react';
 import Link from 'next/link';
 import {app} from "../firebaseConfig"
 import { getAuth, signOut } from 'firebase/auth';

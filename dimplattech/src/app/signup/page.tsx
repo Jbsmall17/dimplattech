@@ -1,5 +1,5 @@
 "use client"
-import React, { ChangeEvent, FormEvent, useRef, useState } from 'react'
+import React, { ChangeEvent, FormEvent, useState } from 'react'
 import dimplatWallpaper from "../../assests/dimplat-wallpaper.png"
 import Image from 'next/image'
 import {app,database } from '@/firebaseConfig'
@@ -57,10 +57,10 @@ export default function page() {
         const {name, value, checked} = event.target
         let newValue = value;
         if(name == "firstName" || name == "lastName" || name == "country" || name == "stateOfResidence"){
-            let filteredValue = value.replace(/\d/g,"")
+            const filteredValue = value.replace(/\d/g,"")
             newValue = filteredValue
         }else if(name == "phoneNumber"){
-            let filteredValue = value.replace(/[a-zA-Z]/g,"")
+            const filteredValue = value.replace(/[a-zA-Z]/g,"")
             newValue = filteredValue
         }
         setSignUpObj({
@@ -73,7 +73,7 @@ export default function page() {
         e.preventDefault();
         const saltRounds = 10;
         const hashPassword = await bcrypt.hash(signUpObj.password, saltRounds)
-        for(let x in signUpObj){
+        for(const x in signUpObj){
             if(signUpObj[x as keyof SignUpObj] === ""){
                 setErrorObj((prev) => {
                     return {

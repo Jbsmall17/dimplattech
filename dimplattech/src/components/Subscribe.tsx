@@ -32,11 +32,10 @@ export default function Subscribe() {
           <CustomForm
             status={status}
             message={message}
-            onValidated={(formData: any) => subscribe(formData)}
+            onValidated={(formData) => subscribe(formData)}
           />
         )}
       />
-      {/* <CustomForm /> */}
     </motion.section>
   )
 }

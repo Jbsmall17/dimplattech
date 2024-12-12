@@ -1,23 +1,32 @@
 "use client"
 import Image, { StaticImageData } from 'next/image'
-import React, { MouseEvent, useState } from 'react'
+import React, { ChangeEvent, MouseEvent, useState } from 'react'
 import { FaWhatsapp } from "react-icons/fa6"
 import durationSvg from "../assests/duration.svg"
 import certificateSvg from "../assests/certificate.svg"
 import instructorSvg from "../assests/instructor.svg"
 import { motion,AnimatePresence } from "motion/react"
 import Link from 'next/link'
+import { useContextValue } from '@/context/context'
 
 interface courseHeroProps{
     name: JSX.Element,
     desc: JSX.Element,
     month: string,
-    image: StaticImageData
+    image: StaticImageData,
+    shortName: string
 }
 
-export default function CourseHero({name,desc,month,image}:courseHeroProps) {
+export default function CourseHero({name,desc,month,image,shortName}:courseHeroProps) {
     const [isDurationVisible, setIsDurationVisible] = useState(false)
-    
+    const {setBuyerDetials} = useContextValue()
+    const [cohortMonth,setCohortMonth] = useState("")
+
+    const handleChange = (e: ChangeEvent<HTMLSelectElement>) =>{
+        const {value} = e.target
+        setCohortMonth(value)
+    }
+
     const clickDurationHandler = ()=>{
         setIsDurationVisible((prev)=>{
             return !prev
@@ -49,8 +58,17 @@ export default function CourseHero({name,desc,month,image}:courseHeroProps) {
             >
                <p className='close-duration  text-xl sm:text-2xl lg:text-3xl mb-3 lg:mb-6 font-semibold text-[#219dd0]'>{name}</p>
                 <p className='close-duration  text-sm sm:text-base text-white mb-3 lg:mb-6'>{desc}</p> 
-                <Link href="/admission-form">
-                    <button className='close-duration  h-[32px] lg:h-[40px] flex items-center px-6 rounded-lg bg-white text-[#219dd0] text-base font-semibold hover:text-white hover:bg-transparent hover:border hover:border-[#219dd0] transition ease-out duration-700'>Register</button>
+                <Link onClick={()=>{
+                    setBuyerDetials((prev)=>{
+                        return {
+                            ...prev,
+                            courseOfInterest: shortName
+                        }
+                    })
+                }} href="/admission-form">
+                    <button className='close-duration  h-[32px] lg:h-[40px] flex items-center px-6 rounded-lg bg-white text-[#219dd0] text-base font-semibold hover:text-white hover:bg-transparent hover:border hover:border-[#219dd0] transition ease-out duration-700'>
+                        Register
+                    </button>
                 </Link>
             </motion.div>
             <div className='relative shrink-0'>
@@ -71,8 +89,27 @@ export default function CourseHero({name,desc,month,image}:courseHeroProps) {
                         id="durationEl" className='absolute right-0 block md:hidden'>
                 <div className='glassmorphism rounded-2xl py-2 px-3 min-w-[225px]'>
                     <p className='text-white text-xl font-semibold mb-2'>Cohort Start Month</p>
-                    <select name="" id="" className='bg-transparent border border-white text-white w-[75%] p-1'>
+                    <select 
+                        name="cohortMonth" 
+                        id="cohortMonth" 
+                        className='bg-transparent border border-white text-[#219dd0] w-[75%] p-1'
+                        value={cohortMonth}
+                        onChange={handleChange}
+                    >
+                        <option value="">select a month</option>
                         <option value="January">January</option>
+                        <option value="February">February</option>
+                        <option value="March">March</option>
+                        <option value="April">April</option>
+                        <option value="May">May</option>
+                        <option value="June">June</option>
+                        <option value="July">July</option>
+                        <option value="June">June</option>
+                        <option value="August">August</option>
+                        <option value="September">September</option>
+                        <option value="October">October</option>
+                        <option value="November">November</option>
+                        <option value="December">December</option>
                     </select>
                     <ul className='mt-4'>
                         <li className='flex gap-2 items-center mb-2'>
@@ -104,11 +141,23 @@ export default function CourseHero({name,desc,month,image}:courseHeroProps) {
                         </li>
                     </ul>
                     <div className='flex justify-center'>
-                        <button 
-                            className='text-center h-[32px] md:h-[40px] flex items-center px-12 text-[#219dd0] bg-white rounded-lg hover:text-white hover:bg-transparent hover:border hover:border-[#219dd0] transition ease-out duration-700 font-semibold'
-                        >
-                            <p className='leading-none'>Enrol Now</p>
-                        </button>
+                        <Link 
+                            onClick={()=>{
+                                setBuyerDetials((prev)=>{
+                                    return {
+                                        ...prev,
+                                        courseOfInterest: shortName,
+                                        cohortMonth
+                                    }
+                                })
+                            }}
+                            href="/admission-form">
+                            <button 
+                                className='text-center h-[32px] md:h-[40px] flex items-center px-12 text-[#219dd0] bg-white rounded-lg hover:text-white hover:bg-transparent hover:border hover:border-[#219dd0] transition ease-out duration-700 font-semibold'
+                            >
+                                <p className='leading-none'>Enrol Now</p>
+                            </button>
+                        </Link>
                     </div>
                 </div>
                     </motion.div>
@@ -123,20 +172,26 @@ export default function CourseHero({name,desc,month,image}:courseHeroProps) {
                 className='hidden md:block'>
                 <div className='glassmorphism rounded-2xl py-4 px-3 min-w-[300px] '>
                     <p className='text-white text-xl font-semibold mb-2'>Cohort Start Month</p>
-                    <select name="" id="" className='bg-transparent border text-[#219dd0] rounded-lg outline-none border-white w-[75%] p-1'>
-                        <option value="January">January</option>
-                        <option value="February">February</option>
-                        <option value="March">March</option>
-                        <option value="April">April</option>
-                        <option value="May">May</option>
-                        <option value="June">June</option>
-                        <option value="July">July</option>
-                        <option value="June">June</option>
-                        <option value="August">August</option>
-                        <option value="September">September</option>
-                        <option value="October">October</option>
-                        <option value="November">November</option>
-                        <option value="December">December</option>
+                    <select 
+                        name="cohortMonth" 
+                        id="cohortMonth"
+                        value={cohortMonth} 
+                        onChange={handleChange}
+                        className='bg-transparent border text-[#219dd0] rounded-lg outline-none border-white w-[75%] p-1'
+                    >
+                        <option value="">select a month</option>
+                        <option value="january">January</option>
+                        <option value="february">February</option>
+                        <option value="march">March</option>
+                        <option value="april">April</option>
+                        <option value="may">May</option>
+                        <option value="june">June</option>
+                        <option value="july">July</option>
+                        <option value="august">August</option>
+                        <option value="september">September</option>
+                        <option value="october">October</option>
+                        <option value="november">November</option>
+                        <option value="december">December</option>
                     </select>
                     <ul className='mt-6'>
                         <li className='flex gap-2 items-center mb-4'>
@@ -168,11 +223,21 @@ export default function CourseHero({name,desc,month,image}:courseHeroProps) {
                         </li>
                     </ul>
                     <div className='flex justify-center'>
-                        <button 
-                            className='text-center h-[40px] flex items-center px-12 text-[#219dd0] bg-white rounded-lg hover:text-white hover:bg-transparent hover:border hover:border-[#219dd0] transition ease-out duration-700 font-semibold'
-                        >
-                            Enrol Now
-                        </button>
+                        <Link onClick={()=>{
+                            setBuyerDetials((prev)=>{
+                                return {
+                                    ...prev,
+                                    courseOfInterest: shortName,
+                                    cohortMonth
+                                }
+                            })
+                        }} href="/admission-form">
+                            <button 
+                                className='text-center h-[40px] flex items-center px-12 text-[#219dd0] bg-white rounded-lg hover:text-white hover:bg-transparent hover:border hover:border-[#219dd0] transition ease-out duration-700 font-semibold'
+                            >
+                                Enrol Now
+                            </button>
+                        </Link>
                     </div>
                 </div>
             </motion.div>

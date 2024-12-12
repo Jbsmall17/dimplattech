@@ -25,6 +25,7 @@ export default function page() {
         name={<>DIGITAL MARKETING</>}
         desc={<>Learn digital marketing that can help you develop a diverse set of skills<br /> valuable in the current job market.</>}
         month={"6"}
+        shortName='digitalMarketing'
         />
         <section>
             <AdmissionRequirement />
@@ -65,13 +66,14 @@ export default function page() {
             </div>
             <CourseFee 
                 onSite={{
-                    private: "#200,000",
-                    general: "#300,000"
+                    private: "#300,000",
+                    general: "#200,000"
                 }}
                 virtual={{
-                    private: "#200,000",
-                    general: "#300,000"
+                    private: "#250,000",
+                    general: "#150,000"
                 }}
+                shortName='digitalMarketing'
             />
             <CareerOutcome 
                 image={digitalCareer}

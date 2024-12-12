@@ -27,6 +27,7 @@ export default function page() {
         name={<React.Fragment>PRODUCT DESIGN (UI/UX DESIGN)</React.Fragment>}
         desc={<>Learn to design and deliver digital products that serves clients needs<br /> and solve users problems. Understanding the fundamentals and tools<br /> of design like problem definition, user research, prototyping and more.</>}
         month={"3"}
+        shortName='productDesign'
       />
       <section>
         <AdmissionRequirement />
@@ -68,12 +69,13 @@ export default function page() {
         <CourseFee 
             onSite={{
               private: "#200,000",
-              general: "#300,000"
+              general: "#120,000"
             }}
             virtual={{
-              private: "#200,000",
-              general: "#300,000"
+              private: "#300,000",
+              general: "#200,000"
             }}
+            shortName='productDesign'
           />
           <CareerOutcome 
             image={careerImg}

@@ -26,6 +26,7 @@ export default function page() {
             name={<>CLOUD COMPUTING</>}
             desc={<>Learn the basics of cloud computing, including infrastructure,<br /> services, and deployment models.</>}
             month={"6"}
+            shortName='cloudComputing'
         />
         <section>
             <AdmissionRequirement />
@@ -66,13 +67,14 @@ export default function page() {
             </div>
             <CourseFee 
                 onSite={{
-                    private: "#200,000",
-                    general: "#300,000"
+                    private: "#350,000",
+                    general: "#250,000"
                 }}
                 virtual={{
-                    private: "#200,000",
-                    general: "#300,000"
+                    private: "#350,000",
+                    general: "#500,000"
                 }}
+                shortName='cloudComputing'
             />
             <CareerOutcome 
                 image={cyberCareer}

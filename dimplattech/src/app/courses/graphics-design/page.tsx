@@ -25,6 +25,7 @@ export default function page() {
             name={<>CLOUD COMPUTING</>}
             desc={<>Learn how to create visual content to communicate messages. By<br /> applying visual hierarchy and page layout techniques.</>}
             month={"6"}
+            shortName='graphicsDesign'
         />
         <section>
             <AdmissionRequirement />
@@ -65,13 +66,14 @@ export default function page() {
             </div>
             <CourseFee 
                 onSite={{
-                    private: "#200,000",
-                    general: "#300,000"
+                    private: "#300,000",
+                    general: "#200,000"
                 }}
                 virtual={{
                     private: "#200,000",
-                    general: "#300,000"
+                    general: "#120,000"
                 }}
+                shortName='graphicsDesign'
             />
             <CareerOutcome 
                 image={graphicsCareer}

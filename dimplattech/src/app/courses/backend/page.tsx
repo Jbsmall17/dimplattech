@@ -25,6 +25,7 @@ export default function page() {
             name={<>BACK END DEVELOPMENT</>}
             desc={<>learn how to write APIs, creating libraries, and working with system<br />components and how to build code that allows a database and an<br /> application to communicate with one another.</>}
             month={"4"}
+            shortName='backend'
         />
         <section>
             <AdmissionRequirement />
@@ -65,13 +66,14 @@ export default function page() {
             </div>
             <CourseFee 
                 onSite={{
-                    private: "#200,000",
+                    private: "#450,000",
                     general: "#300,000"
                 }}
                 virtual={{
-                    private: "#200,000",
-                    general: "#300,000"
+                    private: "#350,000",
+                    general: "#200,000"
                 }}
+                shortName='backend'
             />
             <CareerOutcome 
                 image={backendCareerImg}

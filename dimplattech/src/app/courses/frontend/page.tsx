@@ -25,6 +25,7 @@ export default function page() {
             name={<>FRONT END DEVELOPMENT</>}
             desc={<>Let&apos;s help you become a professional frontend web developer. You&apos;ll learn all<br /> you need to know to become a Frontend Developer and build interesting<br /> portfolios while learning the fundamentals of HTML, CSS, JavaScript and React</>}
             month={"3"}
+            shortName='frontend'
         />
         <section>
             <AdmissionRequirement />
@@ -66,12 +67,13 @@ export default function page() {
             <CourseFee 
                 onSite={{
                     private: "#200,000",
-                    general: "#300,000"
+                    general: "#120,000"
                 }}
                 virtual={{
-                    private: "#200,000",
-                    general: "#300,000"
+                    private: "#300,000",
+                    general: "#200,000"
                 }}
+                shortName='frontend'
             />
             <CareerOutcome
                 image={frontendCareer}

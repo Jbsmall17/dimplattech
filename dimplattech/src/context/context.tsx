@@ -12,8 +12,29 @@ interface contextType {
     setCurrentRoute: Dispatch<SetStateAction<string>>,
     pathname: string,
     activePage: string, 
-    setActivePage: Dispatch<SetStateAction<string>>
+    setActivePage: Dispatch<SetStateAction<string>>,
+    buyerDetails: buyerDetailsObj, 
+    setBuyerDetials: Dispatch<SetStateAction<buyerDetailsObj>>
 }
+
+interface buyerDetailsObj {
+    fullName: string,
+    email: string,
+    phoneNumber: string,
+    qualification: string,
+    age: string,
+    gender: string,
+    country: string,
+    city: string,
+    courseOfInterest: string,
+    cohortMonth: string,
+    classFormat: string,
+    classType: string,
+    paymentType: string,
+    currency: string,
+    agreeToTerms: boolean
+}
+
 
 const context = createContext<contextType | undefined>(undefined)
 
@@ -24,6 +45,23 @@ export const ContextComp = ({children} : {children: ReactNode}) =>{
     const [currentRoute,setCurrentRoute] = useState<string>(pathname)
     const [previousRoute, setPreviousRoute] = useState<string>('/')
     const [activePage, setActivePage] = useState('')
+    const [buyerDetails, setBuyerDetials] = useState({
+        fullName: "",
+        email: "",
+        phoneNumber: "",
+        qualification: "",
+        age: "",
+        gender: "",
+        country: "",
+        city: "",
+        courseOfInterest: "",
+        cohortMonth: '',
+        classFormat: '',
+        classType: "",
+        paymentType: '',
+        currency: '',
+        agreeToTerms: false
+    })
     useEffect(()=>{
         setCurrentRoute(pathname)
     },[pathname])
@@ -36,7 +74,10 @@ export const ContextComp = ({children} : {children: ReactNode}) =>{
             setCurrentRoute,
             setPreviousRoute,
             pathname,
-            activePage, setActivePage
+            activePage, 
+            setActivePage,
+            buyerDetails, 
+            setBuyerDetials
             }}>
             {children}
         </context.Provider>
@@ -46,5 +87,8 @@ export const ContextComp = ({children} : {children: ReactNode}) =>{
 
 export const useContextValue = () =>{
     const contextObj = useContext(context)
+    if (!contextObj) {
+        throw new Error("error occurred");
+      }
     return contextObj
 }

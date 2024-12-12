@@ -14,7 +14,6 @@ interface CustomFormProps {
 
 
 export default function Subscribe() {
-  console.log(process.env.NEXT_PUBLIC_MAILCHIMP_ENDPOINT)
   return (
     <motion.section 
       initial={{opacity:0, y: 50}} 

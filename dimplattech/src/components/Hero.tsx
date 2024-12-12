@@ -6,6 +6,7 @@ import heroImage2 from "../assests/hero-image-2.png"
 import Image from 'next/image';
 import { motion } from "motion/react"
 import { useContextValue } from '@/context/context'
+import Link from 'next/link'
 
 export default function Hero({scrollToCourse}:{scrollToCourse: () => void}) {
   const obj = useContextValue()
@@ -24,9 +25,11 @@ export default function Hero({scrollToCourse}:{scrollToCourse: () => void}) {
             manage softwares.
         </p>
         <div className='flex gap-4 md:gap-2 justify-center md:justify-start'>
-            <button className='w-[120px] h-[36px] rounded-lg bg-[#219dd0] text-white flex justify-center items-center hover:bg-white hover:border hover:border-[#219dd0] hover:text-[#219dd0] transition-all duration-500 ease-linear'>
+            <Link href="/signup">
+              <button className='w-[120px] h-[36px] rounded-lg bg-[#219dd0] text-white flex justify-center items-center hover:bg-white hover:border hover:border-[#219dd0] hover:text-[#219dd0] transition-all duration-500 ease-linear'>
                 Register
-            </button>
+              </button>
+            </Link>
             <button
               onClick={() => {obj?.setActivePage('course'); scrollToCourse()}} 
               className='group relative w-[125px] h-[36px] flex gap-1 items-center rounded-lg hover:border hover:border-[#219dd0] transition-all duration-500 ease-linear hover:bg-white'>

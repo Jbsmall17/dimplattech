@@ -10,13 +10,11 @@ import cad from "../assests/autocad.png"
 import fullstack from "../assests/fullstack.png"
 import marketing from "../assests/marketing.png"
 import projectManagement from "../assests/projectManangement.png"
-// import productManagement from "../assests/productManagement.png"
 import cyberSecurity from "../assests/cyberSecurity.png"
 import cloudComputing from "../assests/cloudComputing.png"
 import graphics from "../assests/graphicDesign.png"
 import { AnimatePresence } from 'motion/react'
 import { useContextValue } from '@/context/context'
-// import realEstate from "../assests/realEstate.png" 
 
 interface coursesCompProp {
   firstRender: boolean,
@@ -78,7 +76,7 @@ export default forwardRef(function Courses({firstRender,setFirstRender} : course
               image={dataAnalysis}
               name={"Data Analysis"}
               desc={"learn the latest analytics tools and techniques, how to work with SQL, the languages of R and Python, the art of creating data visualizations, and how to apply statistics and predictive analytics in a business environment."}
-              courseRoute='/courses/data-analysis'
+              courseRoute='/courses/data-analytics'
             />
             <Course
               image={backend}

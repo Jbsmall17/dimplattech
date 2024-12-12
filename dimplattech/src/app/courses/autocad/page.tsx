@@ -26,6 +26,7 @@ export default function page() {
             name={<>Computer Aided Design (AutoCAD).</>}
             desc={<>Learn how to produce precise 2D and 3D drawings and models, electrical<br /> diagrams, construction drawings, interior designs, and more.</>}
             month={"3"}
+            shortName='autocad'
         />
         <section>
             <AdmissionRequirement />
@@ -66,13 +67,14 @@ export default function page() {
             </div>
             <CourseFee 
                 onSite={{
-                    private: "#200,000",
-                    general: "#300,000"
+                    private: "#350,000",
+                    general: "#250,000"
                 }}
                 virtual={{
-                    private: "#200,000",
-                    general: "#300,000"
+                    private: "#350,000",
+                    general: "#500,000"
                 }}
+                shortName="autocad"
             />
             <CareerOutcome 
                 image={autoCadCareer}

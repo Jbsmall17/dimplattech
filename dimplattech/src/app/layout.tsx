@@ -19,13 +19,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <ContextComp>
       <body
         className="overflow-x-hidden"
       >
-        <ContextComp>
           {children}
-        </ContextComp>
       </body>
+      </ContextComp>
     </html>
   );
 }

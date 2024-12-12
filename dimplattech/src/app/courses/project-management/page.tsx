@@ -26,6 +26,7 @@ export default function page() {
             name={<>PROJECT MANAGEMENT</>}
             desc={<>Learn how to conduct customer research interviews and testing, pricing and<br /> revenue modeling, running design sprints, product roadmapping, and<br /> ranking your features list.</>}
             month={"6"}
+            shortName='projectManagement'
         />
         <section>
             <AdmissionRequirement />
@@ -66,13 +67,14 @@ export default function page() {
             </div>
             <CourseFee 
                 onSite={{
-                    private: "#200,000",
+                    private: "#400,000",
                     general: "#300,000"
                 }}
                 virtual={{
-                    private: "#200,000",
-                    general: "#300,000"
+                    private: "#350,000",
+                    general: "#200,000"
                 }}
+                shortName='projectManagement'
             />
             <CareerOutcome 
                 image={projectCareer}

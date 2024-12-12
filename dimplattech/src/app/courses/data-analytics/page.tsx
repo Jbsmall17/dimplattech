@@ -22,9 +22,10 @@ export default function page() {
         />
         <CourseHero
             image={dataAnalysisImg}
-            name={<>DATA ANALYSIS</>}
+            name={<>DATA ANALYTICS</>}
             desc={<>learn the latest analytics tools and techniques, how to work with SQL, the languages<br /> of R and Python, the art of creating data visualizations, and how to apply statistics and<br /> predictive analytics in a business environment.I</>}
             month={"6"}
+            shortName={"dataAnalytics"}
         />
         <section>
             <AdmissionRequirement />
@@ -65,13 +66,14 @@ export default function page() {
             </div>
             <CourseFee 
                 onSite={{
-                    private: "#200,000",
-                    general: "#300,000"
+                    private: "#350,000",
+                    general: "#200,000"
                 }}
                 virtual={{
                     private: "#200,000",
-                    general: "#300,000"
+                    general: "#120,000"
                 }}
+                shortName='dataAnalytics'
             />
             <CareerOutcome
                 image={dataAnalCareer}

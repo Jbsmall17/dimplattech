@@ -25,6 +25,7 @@ export default function page() {
             name={<>FULL STACK<br />DEVELOPMENT</>}
             desc={<>This program will equip you with the skills needed to follow a career<br /> specifying and developing and designing web applications, and other web-<br />based solutions</>}
             month={"6"}
+            shortName='fullstack'
         />
         <section>
             <AdmissionRequirement />
@@ -65,13 +66,14 @@ export default function page() {
             </div>
             <CourseFee 
                 onSite={{
-                    private: "#200,000",
-                    general: "#300,000"
+                    private: "#650,000",
+                    general: "#500,000"
                 }}
                 virtual={{
-                    private: "#200,000",
-                    general: "#300,000"
+                    private: "#500,000",
+                    general: "#350,000"
                 }}
+                shortName='fullstack'
             />
              <CareerOutcome 
                 image={fullStackCareerImg}

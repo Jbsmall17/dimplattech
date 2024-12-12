@@ -3,6 +3,20 @@ interface TopicsObj{
     description: string[] 
 }
 
+interface priceObj {
+    name: string,
+    payment: {
+        physical: {
+            private: string,
+            general: string
+        },
+        virtual: {
+            private: string,
+            general: string
+        } 
+    }
+}
+
 export const productDesign : TopicsObj[] = [
     {
       title: "Introduction to the course",
@@ -728,5 +742,190 @@ export const graphicsDesign : TopicsObj[] = [
             "Group Project",
             "Individual Project"
         ]
+    }
+]
+
+export const PriceList : priceObj[] = [
+    {
+        name: 'backend',
+        payment:{
+            physical: {
+            private: "450000",
+            general: "300000"
+            },
+            virtual: {
+            private: "350000",
+            general: "200000"
+            }
+        }
+    },
+    {
+        name: 'dataAnalytics',
+        payment: {
+            physical:{
+                private: "350000",
+                general: "200000",
+            },
+            virtual:{
+                private: "200000",
+                general: "120000"
+            }
+        }
+    },
+    {
+        name: 'dataScience',
+        payment: {
+            physical:{
+                private: "350000",
+                general: "200000",
+            },
+            virtual:{
+                private: "200000",
+                general: "120000"
+            }
+        }
+    },
+    {
+        name: "realEstate",
+        payment: {
+            physical: {
+                private: "350000",
+                general: "250000"
+            },
+            virtual: {
+                private: "200000",
+                general: "100000"
+            }
+        }
+    },
+     {
+        name: "productDesign",
+        payment: {
+            physical: {
+                private: "200000",
+                general: "120000",
+            },
+            virtual: {
+                private: "300000",
+                general: "200000"
+            }
+        }
+    },
+     {
+        name: 'projectManagement',
+        payment: {
+            physical: {
+                private: "400000",
+                general: "300000"
+            },
+            virtual: {
+                private: "350000",
+                general: "200000"
+            }
+        }
+    },
+    {
+        name: "digitalMarketing",
+        payment: {
+            physical:{
+                private: "300000",
+                general: "200000"
+            },
+            virtual: {
+                private: "250000",
+                general: "150000"
+            }
+        }
+    },
+    {
+        name: "cloudComputing",
+        payment: {
+            physical: {
+                private: "350000",
+                general: "250000"
+            },
+            virtual: {
+                private: "350,000",
+                general: "500000"
+            }
+        }
+    },
+    {
+        name: "frontend",
+        payment: {
+            physical:{
+                private: "200000",
+                general: "120000"
+            },
+            virtual:{
+                private: "300000",
+                general: "200000"
+            }
+        }
+    },
+    {
+        name: "graphicsDesign",
+        payment: {
+            physical:{
+                private: "300000",
+                general: "200000"
+            },
+            virtual: {
+                private: "200000",
+                general: "120000"
+            }
+        }
+    },
+    {
+        name: "productManagement",
+        payment: {
+            physical: {
+                private: "350000",
+                general: "250000"
+            },
+            virtual: {
+                private: "300000",
+                general: "200000"
+            }
+        }
+    },
+    {
+        name: "fullstack",
+        payment: {
+            physical:{
+                private: "650000",
+                general: "500000"
+            },
+            virtual: {
+                private: "500000",
+                general: "350000"
+            }
+        }
+    },
+    {
+        name: "autocad",
+        payment: {
+            physical: {
+                private: "350000",
+                general: "250000"
+            },
+            virtual : {
+                private: "350000",
+                general: "500000"
+            }
+        }
+    },
+    {
+        name: "cyberSecurity",
+        payment: {
+            physical: {
+                private: "350000",
+                general: "250000"
+            },
+            virtual: {
+                private: "350000",
+                general: "500000"
+            }
+        }
     }
 ]

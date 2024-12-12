@@ -1,6 +1,10 @@
 "use client"
 import React from 'react'
 import { motion } from "motion/react"
+import Link from 'next/link'
+import { formatPrice } from '@/utils/util'
+import { useContextValue } from '@/context/context'
+
 interface courseFeePropsObj{
     onSite: {
         private: string,
@@ -9,11 +13,13 @@ interface courseFeePropsObj{
     virtual: {
         private: string,
         general: string
-    }
+    },
+    shortName: string
 }
 
-export default function CourseFee({onSite,virtual}: courseFeePropsObj) {
-  return (
+export default function CourseFee({onSite,virtual, shortName}: courseFeePropsObj) {
+  const {setBuyerDetials} = useContextValue()
+    return (
     <section className='px-[5%] bg-[#e2f2f9] pt-4 sm:pt-6 lg:pt-8 pb-6 sm:pb-8 lg:pb-10 mb-4 sm:mb-6 lg:mb-8'>
         <div className='relative pt-4 mb-4 sm:mb-6 lg:mb-8'>
             <div className='absolute z-[1] left-0 bottom-2 h-[24px] sm:h-[32px] w-[24px] sm:w-[32px] rounded-full bg-[#219dd0]'></div>
@@ -35,14 +41,30 @@ export default function CourseFee({onSite,virtual}: courseFeePropsObj) {
                 </p>
                 <div className='py-4 px-6'>
                     <p className='text-center text-base sm:text-lg font-semibold'>PRIVATE PHYSICAL CLASS:</p>
-                    <p className='text-center text-base sm:text-lg font-semibold mb-4 sm:mb-6'>{onSite.private}</p>
+                    <p className='text-center text-base sm:text-lg font-semibold mb-4 sm:mb-6'>{formatPrice(onSite.private)}</p>
                     <p className='text-center text-base sm:text-lg font-semibold'>GENERAL PHYSICAL CLASS:</p>
-                    <p className='text-center text-base sm:text-lg font-semibold mb-2'>{onSite.general}</p>
+                    <p className='text-center text-base sm:text-lg font-semibold mb-2'>{formatPrice(onSite.general)}</p>
                     <p className='text-center text-sm sm:text-base font-semibold mb-2 text-[#219dd0]'>
                         This fee can be paid in up to 2 <br /> installments
                     </p>
                     <div className='flex justify-center items-center'>
-                        <button className='py-2 px-8 leading-none rounded-lg text-center text-[#219dd0] border border-[#219dd0]'>Enrol Now</button>
+                        <Link 
+                            onClick={()=>{
+                               setBuyerDetials((prev)=>{
+                                return {
+                                    ...prev,
+                                    classFormat: 'physical-class', 
+                                    courseOfInterest: shortName
+                                }
+                               }) 
+                            }}
+                            href="/admission-form">
+                            <button 
+                                className='py-2 px-8 leading-none rounded-lg text-center text-[#219dd0] border border-[#219dd0] hover:text-white hover:bg-[#219dd0] transition duration-500'
+                            >
+                                Enrol Now
+                            </button>
+                        </Link>
                     </div>
                 </div>
             </motion.div>
@@ -59,14 +81,30 @@ export default function CourseFee({onSite,virtual}: courseFeePropsObj) {
                 </p>
                 <div className='py-4 px-6'>
                     <p className='text-center text-base sm:text-lg font-semibold'>PRIVATE VIRTUAL CLASS:</p>
-                    <p className='text-center text-base sm:text-lg font-semibold mb-4 sm:mb-6'>{virtual.private}</p>
+                    <p className='text-center text-base sm:text-lg font-semibold mb-4 sm:mb-6'>{formatPrice(virtual.private)}</p>
                     <p className='text-center text-base sm:text-lg font-semibold'>GENERAL VIRTUAL CLASS:</p>
-                    <p className='text-center text-base sm:text-lg font-semibold mb-2'>{virtual.general}</p>
+                    <p className='text-center text-base sm:text-lg font-semibold mb-2'>{formatPrice(virtual.general)}</p>
                     <p className='text-center text-sm sm:text-base font-semibold mb-2 text-[#219dd0]'>
                         This fee can be paid in up to 2 <br /> installments
                     </p>
                     <div className='flex justify-center items-center'>
-                        <button className='py-2 px-8 leading-none rounded-lg text-center text-[#219dd0] border border-[#219dd0]'>Enrol Now</button>
+                        <Link 
+                            onClick={()=>{
+                                setBuyerDetials((prev)=>{
+                                 return {
+                                     ...prev,
+                                    classFormat: 'virtual-class', 
+                                    courseOfInterest: shortName
+                                }
+                                }) 
+                             }}
+                            href="/admission-form">
+                            <button 
+                                className='py-2 px-8 leading-none rounded-lg text-center text-[#219dd0] border border-[#219dd0] hover:text-white hover:bg-[#219dd0] transition duration-500'
+                            >
+                                Enrol Now
+                            </button>
+                        </Link>
                     </div>
                 </div>
             </motion.div>

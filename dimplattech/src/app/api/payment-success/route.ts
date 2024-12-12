@@ -58,7 +58,7 @@ export const POST = async (req: Request) => {
       }
     } catch (error: any) {
       return new Response(
-        JSON.stringify({ error: 'An error occurred' }),
+        JSON.stringify({ error: `An error occurred: ${error.message}` }),
         { status: 500, headers: { 'Content-Type': 'application/json' } }
       );
     }

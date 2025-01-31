@@ -24,7 +24,7 @@ export default function page() {
         image={digitalImg}
         name={<>DIGITAL MARKETING</>}
         desc={<>Learn digital marketing that can help you develop a diverse set of skills<br /> valuable in the current job market.</>}
-        month={"6"}
+        month={"3"}
         shortName='digitalMarketing'
         />
         <section>
@@ -66,8 +66,8 @@ export default function page() {
             </div>
             <CourseFee 
                 onSite={{
-                    private: "#300,000",
-                    general: "#200,000"
+                    private: "#400,000",
+                    general: "#250,000"
                 }}
                 virtual={{
                     private: "#250,000",

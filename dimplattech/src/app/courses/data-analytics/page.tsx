@@ -24,7 +24,7 @@ export default function page() {
             image={dataAnalysisImg}
             name={<>DATA ANALYTICS</>}
             desc={<>learn the latest analytics tools and techniques, how to work with SQL, the languages<br /> of R and Python, the art of creating data visualizations, and how to apply statistics and<br /> predictive analytics in a business environment.I</>}
-            month={"6"}
+            month={"3"}
             shortName={"dataAnalytics"}
         />
         <section>
@@ -66,12 +66,12 @@ export default function page() {
             </div>
             <CourseFee 
                 onSite={{
-                    private: "#350,000",
-                    general: "#200,000"
+                    private: "#400,000",
+                    general: "#250,000"
                 }}
                 virtual={{
-                    private: "#200,000",
-                    general: "#120,000"
+                    private: "#250,000",
+                    general: "#150,000"
                 }}
                 shortName='dataAnalytics'
             />

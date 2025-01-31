@@ -24,7 +24,7 @@ export default function page() {
             image={productManImg}
             name={<>Product Management</>}
             desc={<>Learn Planning, budgeting, developing effective strategies, managing<br /> stakeholders, achieving tasks on a deadline and mastering the efficient<br /> management of time</>}
-            month={"6"}
+            month={"3"}
             shortName='productManagement'
         />
         <section>
@@ -66,12 +66,12 @@ export default function page() {
             </div>
             <CourseFee 
                 onSite={{
-                    private: "#350,000",
-                    general: "#250,000"
+                    private: "#500,000",
+                    general: "#350,000"
                 }}
                 virtual={{
-                    private: "#300,000",
-                    general: "#200,000"
+                    private: "#400,000",
+                    general: "#250,000"
                 }}
                 shortName='productManagement'
             />

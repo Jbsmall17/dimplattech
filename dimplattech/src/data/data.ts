@@ -750,12 +750,12 @@ export const PriceList : priceObj[] = [
         name: 'backend',
         payment:{
             physical: {
-            private: "450000",
-            general: "300000"
+            private: "500000",
+            general: "350000"
             },
             virtual: {
             private: "350000",
-            general: "200000"
+            general: "250000"
             }
         }
     },
@@ -763,12 +763,12 @@ export const PriceList : priceObj[] = [
         name: 'dataAnalytics',
         payment: {
             physical:{
-                private: "350000",
-                general: "200000",
+                private: "400000",
+                general: "250000",
             },
             virtual:{
-                private: "200000",
-                general: "120000"
+                private: "250000",
+                general: "150000"
             }
         }
     },
@@ -802,12 +802,12 @@ export const PriceList : priceObj[] = [
         name: "productDesign",
         payment: {
             physical: {
-                private: "200000",
-                general: "120000",
+                private: "400000",
+                general: "250000",
             },
             virtual: {
-                private: "300000",
-                general: "200000"
+                private: "250000",
+                general: "150000"
             }
         }
     },
@@ -815,12 +815,12 @@ export const PriceList : priceObj[] = [
         name: 'projectManagement',
         payment: {
             physical: {
-                private: "400000",
-                general: "300000"
+                private: "500000",
+                general: "350000"
             },
             virtual: {
-                private: "350000",
-                general: "200000"
+                private: "400000",
+                general: "250000"
             }
         }
     },
@@ -828,8 +828,8 @@ export const PriceList : priceObj[] = [
         name: "digitalMarketing",
         payment: {
             physical:{
-                private: "300000",
-                general: "200000"
+                private: "400000",
+                general: "250000"
             },
             virtual: {
                 private: "250000",
@@ -841,12 +841,12 @@ export const PriceList : priceObj[] = [
         name: "cloudComputing",
         payment: {
             physical: {
-                private: "350000",
-                general: "250000"
+                private: "450000",
+                general: "300000"
             },
             virtual: {
-                private: "350,000",
-                general: "500000"
+                private: "450000",
+                general: "300000"
             }
         }
     },
@@ -854,12 +854,12 @@ export const PriceList : priceObj[] = [
         name: "frontend",
         payment: {
             physical:{
-                private: "200000",
-                general: "120000"
+                private: "400000",
+                general: "250000"
             },
             virtual:{
-                private: "300000",
-                general: "200000"
+                private: "250000",
+                general: "150000"
             }
         }
     },
@@ -867,12 +867,12 @@ export const PriceList : priceObj[] = [
         name: "graphicsDesign",
         payment: {
             physical:{
-                private: "300000",
-                general: "200000"
+                private: "400000",
+                general: "250000"
             },
             virtual: {
-                private: "200000",
-                general: "120000"
+                private: "250000",
+                general: "150000"
             }
         }
     },
@@ -880,12 +880,12 @@ export const PriceList : priceObj[] = [
         name: "productManagement",
         payment: {
             physical: {
-                private: "350000",
-                general: "250000"
+                private: "500000",
+                general: "350000"
             },
             virtual: {
-                private: "300000",
-                general: "200000"
+                private: "400000",
+                general: "250000"
             }
         }
     },
@@ -906,12 +906,12 @@ export const PriceList : priceObj[] = [
         name: "autocad",
         payment: {
             physical: {
-                private: "350000",
+                private: "400000",
                 general: "250000"
             },
             virtual : {
-                private: "350000",
-                general: "500000"
+                private: "250000",
+                general: "150000"
             }
         }
     },

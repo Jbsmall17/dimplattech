@@ -66,12 +66,12 @@ export default function page() {
             </div>
             <CourseFee 
                 onSite={{
-                    private: "#200,000",
-                    general: "#120,000"
+                    private: "#400,000",
+                    general: "#250,000"
                 }}
                 virtual={{
-                    private: "#300,000",
-                    general: "#200,000"
+                    private: "#250,000",
+                    general: "#150,000"
                 }}
                 shortName='frontend'
             />

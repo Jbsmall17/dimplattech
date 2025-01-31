@@ -25,7 +25,7 @@ export default function page() {
         image={cyberSecurityImg}
         name={<>CYBER SECURITY</>}
         desc={<>Learn how to leverage a firewall to filter and prevent unauthorized traffic<br /> onto the network. Additionally, you must know about Intrusion detection<br /> systems, Intrusion Prevention Systems, Virtual Private Networks (VPNs),<br /> and remote access.</>}
-        month={"6"}
+        month={"3"}
         shortname="cyberSecurity"
       />
       <section>
@@ -67,12 +67,12 @@ export default function page() {
         </div>
         <CourseFee 
             onSite={{
-                    private: "#350,000",
-                    general: "#250,000"
+                    private: "#450,000",
+                    general: "#300,000"
                 }}
                 virtual={{
-                    private: "#350,000",
-                    general: "#500,000"
+                    private: "#450,000",
+                    general: "#300,000"
                 }}
             shortname="cyberSecurity"
           />

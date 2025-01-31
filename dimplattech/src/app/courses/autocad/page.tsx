@@ -67,12 +67,12 @@ export default function page() {
             </div>
             <CourseFee 
                 onSite={{
-                    private: "#350,000",
+                    private: "#400,000",
                     general: "#250,000"
                 }}
                 virtual={{
-                    private: "#350,000",
-                    general: "#500,000"
+                    private: "#250,000",
+                    general: "#150,000"
                 }}
                 shortName="autocad"
             />

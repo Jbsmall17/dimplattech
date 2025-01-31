@@ -1,7 +1,6 @@
 "use client"
 import React from 'react'
 import { FaInstagram,FaFacebookF,FaXTwitter,FaLinkedinIn, FaTiktok } from "react-icons/fa6";
-import { motion } from "motion/react"
 import Link from 'next/link';
 import { useRouter } from 'next/navigation'
 import { useContextValue } from '@/context/context';
@@ -55,11 +54,7 @@ export default function Footer() {
   }
 
   return (
-    <motion.footer 
-      initial={{opacity:0, y: 50}} 
-      whileInView={{opacity:1, y: 0}} 
-      transition={{ delay: 0.25}} 
-      viewport={{once: true}}
+    <footer 
       className='bg-[#219dd0] pt-6 sm:pt-8 lg:pt-10 pb-2 sm:pb-4 lg:pb-6'>
       <div className='flex flex-col sm:flex-row gap-4 mb-4 px-[5%]'>
         <div className='flex-1 self-center sm:self-end'>
@@ -114,6 +109,6 @@ export default function Footer() {
       </div>
       <hr />
       <p className='px-[4%] text-sm text-[#cfcfcf] mt-2'>&copy; Copyright. All Right Reserved. Dimplattech2023</p>
-    </motion.footer>
+    </footer>
   )
 }
